@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BLACKTHORN BARBER CLUB | Barbería Premium</title>
+
+  <meta
+    name="description"
+    content="Barbería premium para cortes, barba y estilo masculino. Reserva tu hora y vive una experiencia de barbería moderna."
+  />
+
+  <meta name="theme-color" content="#111111" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root{
+      --bg:#0f0f10;
+      --bg2:#171719;
+      --bg3:#1f1f22;
+      --panel:#141416;
+      --text:#f4f1ea;
+      --soft:#a7a19a;
+      --line:rgba(255,255,255,.10);
+      --gold:#c79a52;
+      --gold2:#e1b56c;
+      --white:#ffffff;
+      --shadow:0 25px 70px rgba(0,0,0,.28);
+      --radius:24px;
+      --container:1280px;
+      --transition:.35s cubic-bezier(.2,.7,.2,1);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Inter",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,
+    input,
+    textarea,
+    select{
+      font:inherit;
+    }
+
+    button{
+      border:0;
+      cursor:pointer;
+    }
+
+    ::selection{
+      background:var(--gold);
+      color:#111;
+    }
+
+    .container{
+      width:min(calc(100% - 48px),var(--container));
+      margin:0 auto;
+    }
+
+    .section{
+      padding:120px 0;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+
+      color:var(--gold2);
+
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+
+      margin-bottom:20px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:34px;
+      height:1px;
+      background:currentColor;
+    }
+
+    .section-title{
+      max-width:900px;
+
+      font-family:"Bebas Neue",sans-serif;
+      font-size:clamp(50px,6vw,92px);
+      line-height:.95;
+      letter-spacing:.02em;
+      font-weight:400;
+    }
+
+    .section-title span{
+      color:var(--gold);
+    }
+
+    .section-intro{
+      max-width:650px;
+      margin-top:22px;
+
+      color:var(--soft);
+      line-height:1.8;
+      font-size:17px;
+    }
+
+    .btn{
+      min-height:56px;
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+
+      padding:0 28px;
+
+      border-radius:999px;
+
+      font-size:14px;
+      font-weight:800;
+
+      transition:var(--transition);
+    }
+
+    .btn-gold{
+      background:var(--gold);
+      color:#121212;
+    }
+
+    .btn-gold:hover{
+      transform:translateY(-3px);
+      background:var(--gold2);
+    }
+
+    .btn-outline{
+      border:1px solid rgba(255,255,255,.20);
+      color:var(--white);
+    }
+
+    .btn-outline:hover{
+      background:var(--white);
+      color:#111;
+      border-color:var(--white);
+    }
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      padding:20px 0;
+      transition:var(--transition);
+    }
+
+    header.scrolled{
+      padding:12px 0;
+      background:rgba(15,15,16,.92);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .logo-mark{
+      width:42px;
+      height:42px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.22);
+
+      color:var(--gold2);
+
+      font-family:"Bebas Neue",sans-serif;
+      font-size:22px;
+      letter-spacing:.06em;
+    }
+
+    .logo-text{
+      line-height:1;
+    }
+
+    .logo-text strong{
+      display:block;
+      font-family:"Bebas Neue",sans-serif;
+      font-size:28px;
+      letter-spacing:.05em;
+      font-weight:400;
+    }
+
+    .logo-text span{
+      display:block;
+      color:var(--soft);
+      font-size:10px;
+      letter-spacing:.24em;
+      text-transform:uppercase;
+      margin-top:4px;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      align-items:center;
+      gap:34px;
+    }
+
+    nav a{
+      position:relative;
+      color:#ddd7d0;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-8px;
+      width:0;
+      height:1px;
+      background:var(--gold);
+      transition:.25s;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    .nav-cta{
+      padding:12px 20px;
+      border-radius:999px;
+      background:var(--gold);
+      color:#111;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    .menu-btn{
+      display:none;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      background:var(--bg3);
+      color:var(--white);
+      font-size:20px;
+    }
+
+    .hero{
+      position:relative;
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      padding:150px 0 80px;
+      background:
+        linear-gradient(90deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.60) 48%, rgba(10,10,10,.26) 100%),
+        url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=2200&q=90")
+        center/cover no-repeat;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.78), transparent 38%);
+      pointer-events:none;
+    }
+
+    .hero-grid{
+      position:relative;
+      z-index:2;
+
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
+      gap:clamp(40px,6vw,90px);
+      align-items:end;
+
+      padding-inline:clamp(30px,4vw,70px);
+    }
+
+    .hero-main{
+      max-width:760px;
+    }
+
+    .hero-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      padding:10px 16px;
+
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:999px;
+
+      color:#ddd7d0;
+      font-size:12px;
+      font-weight:700;
+
+      backdrop-filter:blur(10px);
+      margin-bottom:26px;
+    }
+
+    .hero-badge span{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#65cf85;
+      box-shadow:0 0 14px #65cf85;
+    }
+
+    .hero h1{
+      font-family:"Bebas Neue",sans-serif;
+      font-size:clamp(82px,10vw,168px);
+      line-height:.88;
+      letter-spacing:.02em;
+      font-weight:400;
+    }
+
+    .hero h1 span{
+      color:var(--gold);
+    }
+
+    .hero-copy{
+      max-width:580px;
+      margin-top:24px;
+
+      color:#d3cdc6;
+      font-size:18px;
+      line-height:1.8;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:38px;
+    }
+
+    .hero-side{
+      padding:32px;
+      border-radius:var(--radius);
+      background:rgba(20,20,22,.68);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(12px);
+    }
+
+    .hero-side small{
+      display:block;
+      color:var(--gold2);
+      font-size:11px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .hero-side strong{
+      display:block;
+      font-family:"Bebas Neue",sans-serif;
+      font-size:60px;
+      letter-spacing:.03em;
+      font-weight:400;
+      line-height:1;
+    }
+
+    .hero-side p{
+      margin-top:14px;
+      color:#c3bdb7;
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .hero-side-line{
+      height:1px;
+      background:rgba(255,255,255,.10);
+      margin:24px 0;
+    }
+
+    .stats{
+      background:#111214;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .stats-item{
+      padding:38px 26px;
+      text-align:center;
+      border-right:1px solid var(--line);
+    }
+
+    .stats-item:last-child{
+      border-right:0;
+    }
+
+    .stats-item strong{
+      display:block;
+      font-family:"Bebas Neue",sans-serif;
+      font-size:46px;
+      color:var(--gold2);
+      font-weight:400;
+      letter-spacing:.03em;
+    }
+
+    .stats-item span{
+      display:block;
+      margin-top:6px;
+      color:var(--soft);
+      font-size:13px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:90px;
+      align-items:center;
+    }
+
+    .about-images{
+      position:relative;
+      min-height:620px;
+    }
+
+    .about-main-image{
+      position:absolute;
+      left:0;
+      top:0;
+      width:76%;
+      height:560px;
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .about-main-image img,
+    .about-small-image img{
+      height:100%;
+      object-fit:cover;
+    }
+
+    .about-small-image{
+      position:absolute;
+      right:0;
+      bottom:0;
+      width:45%;
+      height:280px;
+      border-radius:26px;
+      overflow:hidden;
+      border:8px solid var(--bg);
+      box-shadow:var(--shadow);
+    }
+
+    .about-content p{
+      color:var(--soft);
+      line-height:1.85;
+      margin-top:22px;
+    }
+
+    .about-points{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .about-point{
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .about-point strong{
+      display:block;
+      font-size:15px;
+      margin-bottom:8px;
+    }
+
+    .about-point span{
+      color:var(--soft);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .services{
+      background:var(--bg2);
+    }
+
+    .services-grid{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .service-card{
+      padding:30px;
+      background:linear-gradient(180deg, #1b1b1e, #121214);
+      border:1px solid var(--line);
+      border-radius:26px;
+      transition:var(--transition);
+    }
+
+    .service-card:hover{
+      transform:translateY(-8px);
+      border-color:rgba(199,154,82,.35);
+      box-shadow:var(--shadow);
+    }
+
+    .service-icon{
+      width:58px;
+      height:58px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:18px;
+      background:rgba(199,154,82,.12);
+      color:var(--gold2);
+
+      font-size:24px;
+      margin-bottom:22px;
+    }
+
+    .service-card h3{
+      font-family:"Bebas Neue",sans-serif;
+      font-size:34px;
+      letter-spacing:.03em;
+      font-weight:400;
+    }
+
+    .service-card p{
+      color:var(--soft);
+      font-size:14px;
+      line-height:1.75;
+      margin-top:12px;
+    }
+
+    .service-meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+
+      margin-top:24px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+    }
+
+    .service-time{
+      color:#d8d2cb;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .service-price{
+      color:var(--gold2);
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .pricing-grid{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .price-card{
+      padding:34px 30px;
+      border-radius:26px;
+      border:1px solid var(--line);
+      background:#131315;
+      transition:var(--transition);
+    }
+
+    .price-card.featured{
+      background:linear-gradient(180deg, rgba(199,154,82,.15), rgba(199,154,82,.05) 30%, #131315 100%);
+      border-color:rgba(199,154,82,.35);
+      transform:scale(1.02);
+    }
+
+    .price-card small{
+      display:block;
+      color:var(--gold2);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      margin-bottom:12px;
+    }
+
+    .price-card h3{
+      font-family:"Bebas Neue",sans-serif;
+      font-size:38px;
+      font-weight:400;
+      letter-spacing:.04em;
+    }
+
+    .price-card strong{
+      display:block;
+      font-family:"Bebas Neue",sans-serif;
+      font-size:66px;
+      line-height:1;
+      color:var(--gold);
+      font-weight:400;
+      margin-top:18px;
+    }
+
+    .price-card strong span{
+      font-size:20px;
+      color:#d7d0c8;
+    }
+
+    .price-card p{
+      margin-top:14px;
+      color:var(--soft);
+      line-height:1.75;
+      font-size:14px;
+    }
+
+    .price-card ul{
+      list-style:none;
+      margin-top:24px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .price-card li{
+      color:#e5ded6;
+      font-size:14px;
+      padding-left:18px;
+      position:relative;
+    }
+
+    .price-card li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:var(--gold2);
+    }
+
+    .process{
+      background:linear-gradient(180deg, var(--bg), #0b0b0c);
+    }
+
+    .process-grid{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      border-top:1px solid var(--line);
+    }
+
+    .process-card{
+      padding:34px 26px 40px;
+      border-right:1px solid var(--line);
+    }
+
+    .process-card:last-child{
+      border-right:0;
+    }
+
+    .process-num{
+      width:42px;
+      height:42px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.12);
+
+      color:var(--gold2);
+      font-size:12px;
+      font-weight:800;
+      margin-bottom:34px;
+    }
+
+    .process-card h3{
+      font-family:"Bebas Neue",sans-serif;
+      font-size:30px;
+      letter-spacing:.03em;
+      font-weight:400;
+    }
+
+    .process-card p{
+      color:var(--soft);
+      font-size:14px;
+      line-height:1.75;
+      margin-top:12px;
+    }
+
+    .barbers-grid{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .barber-card{
+      background:#151517;
+      border:1px solid var(--line);
+      border-radius:28px;
+      overflow:hidden;
+      transition:var(--transition);
+    }
+
+    .barber-card:hover{
+      transform:translateY(-8px);
+      box-shadow:var(--shadow);
+    }
+
+    .barber-photo{
+      height:420px;
+      overflow:hidden;
+    }
+
+    .barber-photo img{
+      height:100%;
+      object-fit:cover;
+      transition:.7s ease;
+    }
+
+    .barber-card:hover .barber-photo img{
+      transform:scale(1.06);
+    }
+
+    .barber-info{
+      padding:26px;
+    }
+
+    .barber-info h3{
+      font-family:"Bebas Neue",sans-serif;
+      font-size:34px;
+      font-weight:400;
+      letter-spacing:.03em;
+    }
+
+    .barber-role{
+      display:block;
+      color:var(--gold2);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      margin-top:4px;
+    }
+
+    .barber-info p{
+      color:var(--soft);
+      font-size:14px;
+      line-height:1.75;
+      margin-top:14px;
+    }
+
+    .gallery{
+      background:var(--bg2);
+    }
+
+    .gallery-grid{
+      margin-top:70px;
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px;
+    }
+
+    .gallery-item{
+      min-height:280px;
+      border-radius:22px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:.7s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.06);
+    }
+
+    .gallery-item.large{
+      grid-column:span 6;
+      min-height:420px;
+    }
+
+    .gallery-item.small{
+      grid-column:span 3;
+    }
+
+    .testimonial-wrap{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:80px;
+      align-items:start;
+    }
+
+    .testimonial-card{
+      padding:46px;
+      border-radius:28px;
+      background:#151517;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .stars{
+      color:var(--gold2);
+      letter-spacing:.16em;
+      font-size:15px;
+    }
+
+    .testimonial-text{
+      margin-top:22px;
+      font-size:clamp(24px,3vw,38px);
+      line-height:1.45;
+      font-weight:700;
+    }
+
+    .testimonial-user{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-top:30px;
+      padding-top:22px;
+      border-top:1px solid var(--line);
+    }
+
+    .testimonial-user img{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      object-fit:cover;
+    }
+
+    .testimonial-user strong{
+      display:block;
+      font-size:14px;
+    }
+
+    .testimonial-user span{
+      display:block;
+      color:var(--soft);
+      font-size:12px;
+      margin-top:3px;
+    }
+
+    .booking{
+      background:linear-gradient(180deg, rgba(199,154,82,.12), rgba(199,154,82,.05) 28%, transparent 100%);
+    }
+
+    .booking-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:90px;
+      align-items:start;
+    }
+
+    .booking-copy p{
+      max-width:500px;
+      margin-top:22px;
+      color:var(--soft);
+      line-height:1.8;
+    }
+
+    .booking-points{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .booking-points span{
+      color:#e1dbd4;
+      font-size:14px;
+    }
+
+    .booking-form{
+      padding:38px;
+      border-radius:28px;
+      background:#151517;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .form-group{
+      margin-bottom:18px;
+    }
+
+    .form-group label{
+      display:block;
+      margin-bottom:8px;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--soft);
+      font-weight:800;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      width:100%;
+      padding:15px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background:#101012;
+      color:var(--white);
+      outline:none;
+      transition:.25s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      border-color:rgba(199,154,82,.45);
+      background:#0b0b0d;
+    }
+
+    .form-group textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    .booking-form .btn{
+      width:100%;
+      margin-top:8px;
+    }
+
+    footer{
+      padding:80px 0 30px;
+      background:#0b0b0c;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:70px;
+      padding-bottom:60px;
+    }
+
+    .footer-brand p{
+      max-width:420px;
+      margin-top:22px;
+      color:var(--soft);
+      font-size:14px;
+      line-height:1.75;
+    }
+
+    .footer-title{
+      margin-bottom:18px;
+      color:#c6b18b;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:13px;
+    }
+
+    .footer-links a{
+      color:#ddd7d0;
+      font-size:14px;
+      transition:.25s;
+    }
+
+    .footer-links a:hover{
+      color:var(--gold2);
+      transform:translateX(4px);
+    }
+
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      padding-top:24px;
+      border-top:1px solid var(--line);
+      color:#7d7770;
+      font-size:12px;
+    }
+
+    .whatsapp{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      z-index:950;
+
+      width:60px;
+      height:60px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:50%;
+      background:#25d366;
+      color:white;
+      box-shadow:0 16px 35px rgba(0,0,0,.26);
+
+      transition:var(--transition);
+    }
+
+    .whatsapp:hover{
+      transform:translateY(-5px) scale(1.04);
+    }
+
+    .whatsapp svg{
+      width:28px;
+      height:28px;
+      fill:currentColor;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(36px);
+      transition:opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:1100px){
+      nav ul,
+      .nav-cta{
+        display:none;
+      }
+
+      .menu-btn{
+        display:grid;
+        place-items:center;
+      }
+
+      nav.mobile-open ul{
+        position:fixed;
+        top:76px;
+        left:16px;
+        right:16px;
+
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+
+        padding:18px;
+        border-radius:22px;
+        background:rgba(15,15,16,.98);
+        border:1px solid var(--line);
+        box-shadow:var(--shadow);
+      }
+
+      nav.mobile-open ul li a{
+        display:block;
+        padding:16px 12px;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .testimonial-wrap,
+      .booking-grid{
+        grid-template-columns:1fr;
+        gap:50px;
+      }
+
+      .hero-side{
+        max-width:420px;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .barbers-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .process-card:nth-child(2){
+        border-right:0;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-brand{
+        grid-column:span 2;
+      }
+
+      .stats-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .stats-item:nth-child(2){
+        border-right:0;
+      }
+
+      .stats-item{
+        border-bottom:1px solid var(--line);
+      }
+
+      .gallery-item.large{
+        grid-column:span 12;
+      }
+
+      .gallery-item.small{
+        grid-column:span 6;
+      }
+    }
+
+    @media(max-width:700px){
+      .container{
+        width:min(calc(100% - 30px),var(--container));
+      }
+
+      .section{
+        padding:90px 0;
+      }
+
+      header{
+        padding:16px 0;
+      }
+
+      .hero{
+        padding:130px 0 60px;
+        min-height:92svh;
+      }
+
+      .hero-grid{
+        padding-inline:8px;
+        gap:34px;
+      }
+
+      .hero h1{
+        font-size:clamp(68px,22vw,108px);
+      }
+
+      .hero-copy{
+        font-size:16px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+      }
+
+      .hero-actions .btn{
+        width:100%;
+      }
+
+      .stats-item{
+        padding:28px 14px;
+      }
+
+      .about-images{
+        min-height:500px;
+      }
+
+      .about-main-image{
+        width:84%;
+        height:430px;
+      }
+
+      .about-small-image{
+        width:50%;
+        height:210px;
+      }
+
+      .about-points,
+      .services-grid,
+      .pricing-grid,
+      .barbers-grid,
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr;
+      }
+
+      .process-card{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+
+      .barber-photo{
+        height:360px;
+      }
+
+      .gallery-grid{
+        gap:14px;
+      }
+
+      .gallery-item.large,
+      .gallery-item.small{
+        grid-column:span 12;
+      }
+
+      .gallery-item.large{
+        min-height:340px;
+      }
+
+      .gallery-item.small{
+        min-height:260px;
+      }
+
+      .booking-form,
+      .testimonial-card{
+        padding:28px 22px;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+        gap:44px;
+      }
+
+      .footer-brand{
+        grid-column:auto;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+      }
+
+      .whatsapp{
+        width:56px;
+        height:56px;
+        right:16px;
+        bottom:16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container nav">
+
+      <a href="#inicio" class="logo">
+        <span class="logo-mark">B</span>
+
+        <div class="logo-text">
+          <strong>BLACKTHORN</strong>
+          <span>Barber Club</span>
+        </div>
+      </a>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#barberos">Barberos</a></li>
+          <li><a href="#reservar">Reservar</a></li>
+        </ul>
+      </nav>
+
+      <a href="#reservar" class="nav-cta">Reservar hora</a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Abrir menú"
+      >
+        ☰
+      </button>
+
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+
+      <div class="hero-main">
+
+        <div class="hero-badge">
+          <span></span>
+          Abierto hoy · atención con reserva
+        </div>
+
+        <h1>
+          ESTILO <span>CLÁSICO</span><br>
+          ACTITUD MODERNA
+        </h1>
+
+        <p class="hero-copy">
+          Cortes, barba y experiencia premium en una barbería creada para
+          quienes valoran el detalle, la presencia y un buen estilo.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#reservar" class="btn btn-gold">
+            Reserva ahora <span>→</span>
+          </a>
+
+          <a href="#servicios" class="btn btn-outline">
+            Ver servicios
+          </a>
+        </div>
+
+      </div>
+
+      <aside class="hero-side">
+        <small>Blackthorn Experience</small>
+
+        <strong>+8 AÑOS</strong>
+
+        <p>
+          Más que un corte: una experiencia completa de barbería con atención
+          personalizada, técnicas precisas y una estética cuidada.
+        </p>
+
+        <div class="hero-side-line"></div>
+
+        <small>Horario</small>
+
+        <p>
+          Lunes a sábado<br>
+          10:00 a 20:00 hrs
+        </p>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-grid">
+
+      <div class="stats-item">
+        <strong>2.500+</strong>
+        <span>Clientes atendidos</span>
+      </div>
+
+      <div class="stats-item">
+        <strong>4.9★</strong>
+        <span>Valoración promedio</span>
+      </div>
+
+      <div class="stats-item">
+        <strong>8+</strong>
+        <span>Años de experiencia</span>
+      </div>
+
+      <div class="stats-item">
+        <strong>100%</strong>
+        <span>Atención personalizada</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="nosotros">
+    <div class="container about-grid">
+
+      <div class="about-images reveal">
+
+        <div class="about-main-image">
+          <img
+            src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1200&q=90"
+            alt="Barbería profesional"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="about-small-image">
+          <img
+            src="https://images.unsplash.com/photo-1512690459411-b0fd1c86b8c8?auto=format&fit=crop&w=900&q=90"
+            alt="Detalle barbería"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+
+      <div class="about-content reveal">
+
+        <div class="eyebrow">Nuestra barbería</div>
+
+        <h2 class="section-title">
+          UNA BARBERÍA CON <span>IDENTIDAD</span>
+        </h2>
+
+        <p>
+          En Blackthorn mezclamos el carácter de la barbería clásica con una
+          ejecución moderna. Cuidamos el corte, el perfilado y el ambiente para
+          que cada visita se sienta distinta.
+        </p>
+
+        <p>
+          Aquí no vienes solo por un servicio. Vienes por atención, precisión y
+          una imagen que realmente te represente.
+        </p>
+
+        <div class="about-points">
+
+          <div class="about-point">
+            <strong>Cortes precisos</strong>
+            <span>Fade, clásico, moderno y asesoría según tu estilo.</span>
+          </div>
+
+          <div class="about-point">
+            <strong>Barba & perfilado</strong>
+            <span>Diseño y terminación cuidada para una presencia impecable.</span>
+          </div>
+
+          <div class="about-point">
+            <strong>Ambiente premium</strong>
+            <span>Un espacio con carácter, cómodo y visualmente potente.</span>
+          </div>
+
+          <div class="about-point">
+            <strong>Atención cercana</strong>
+            <span>Escuchamos lo que quieres y proponemos lo que te favorece.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section services" id="servicios">
+    <div class="container">
+
+      <div class="eyebrow reveal">Servicios principales</div>
+
+      <h2 class="section-title reveal">
+        TODO LO NECESARIO PARA TU <span>MEJOR VERSIÓN</span>
+      </h2>
+
+      <p class="section-intro reveal">
+        Servicios pensados para que salgas con mejor presencia, mejor estilo y
+        una experiencia a la altura.
+      </p>
+
+      <div class="services-grid">
+
+        <article class="service-card reveal">
+          <div class="service-icon">✂</div>
+          <h3>Corte Premium</h3>
+          <p>
+            Corte con asesoría, lavado y terminación cuidada para un resultado
+            limpio, moderno y adaptable a tu estilo.
+          </p>
+
+          <div class="service-meta">
+            <span class="service-time">45 min</span>
+            <span class="service-price">$12.000</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon">🧔</div>
+          <h3>Barba & Perfilado</h3>
+          <p>
+            Diseño de barba, perfilado y definición para una imagen más ordenada,
+            elegante y equilibrada.
+          </p>
+
+          <div class="service-meta">
+            <span class="service-time">30 min</span>
+            <span class="service-price">$8.000</span>
+          </div>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-icon">★</div>
+          <h3>Experiencia Full</h3>
+          <p>
+            Corte premium + barba + detalle final. La experiencia completa para
+            salir impecable.
+          </p>
+
+          <div class="service-meta">
+            <span class="service-time">70 min</span>
+            <span class="service-price">$18.000</span>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="precios">
+    <div class="container">
+
+      <div class="eyebrow reveal">Precios</div>
+
+      <h2 class="section-title reveal">
+        PLANES CLAROS, RESULTADOS <span>SÓLIDOS</span>
+      </h2>
+
+      <p class="section-intro reveal">
+        Puedes tomar un servicio específico o elegir una experiencia más
+        completa según lo que necesites.
+      </p>
+
+      <div class="pricing-grid">
+
+        <div class="price-card reveal">
+          <small>Servicio individual</small>
+          <h3>CORTE</h3>
+          <strong>$12<span>.000</span></strong>
+          <p>
+            Ideal para mantener tu look fresco, limpio y bien trabajado.
+          </p>
+
+          <ul>
+            <li>Corte con asesoría</li>
+            <li>Perfilado básico</li>
+            <li>Terminación profesional</li>
+          </ul>
+        </div>
+
+        <div class="price-card featured reveal">
+          <small>Más solicitado</small>
+          <h3>FULL EXPERIENCE</h3>
+          <strong>$18<span>.000</span></strong>
+          <p>
+            La opción más completa para renovar tu imagen en una sola visita.
+          </p>
+
+          <ul>
+            <li>Corte premium</li>
+            <li>Barba y perfilado</li>
+            <li>Toque final y styling</li>
+          </ul>
+        </div>
+
+        <div class="price-card reveal">
+          <small>Detalle</small>
+          <h3>BARBA</h3>
+          <strong>$8<span>.000</span></strong>
+          <p>
+            Perfecto si quieres mantener definición, orden y presencia.
+          </p>
+
+          <ul>
+            <li>Diseño de barba</li>
+            <li>Perfilado y limpieza</li>
+            <li>Terminación precisa</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section process">
+    <div class="container">
+
+      <div class="eyebrow reveal">La experiencia</div>
+
+      <h2 class="section-title reveal">
+        ASÍ FUNCIONA TU VISITA A <span>BLACKTHORN</span>
+      </h2>
+
+      <div class="process-grid">
+
+        <div class="process-card reveal">
+          <div class="process-num">01</div>
+          <h3>Reserva</h3>
+          <p>
+            Agendas tu hora por WhatsApp en pocos segundos y eliges tu servicio.
+          </p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="process-num">02</div>
+          <h3>Asesoría</h3>
+          <p>
+            Conversamos contigo para definir el estilo, largo y forma que mejor te queda.
+          </p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="process-num">03</div>
+          <h3>Ejecución</h3>
+          <p>
+            Trabajamos tu corte o barba con detalle, precisión y limpieza.
+          </p>
+        </div>
+
+        <div class="process-card reveal">
+          <div class="process-num">04</div>
+          <h3>Resultado</h3>
+          <p>
+            Sales con una imagen más sólida, cuidada y lista para destacar.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="barberos">
+    <div class="container">
+
+      <div class="eyebrow reveal">Nuestro equipo</div>
+
+      <h2 class="section-title reveal">
+        BARBEROS CON ESTILO, TÉCNICA Y <span>PERSONALIDAD</span>
+      </h2>
+
+      <p class="section-intro reveal">
+        Cada profesional aporta su sello, pero todos comparten el mismo estándar:
+        detalle, precisión y atención de alto nivel.
+      </p>
+
+      <div class="barbers-grid">
+
+        <article class="barber-card reveal">
+          <div class="barber-photo">
+            <img
+              src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=90"
+              alt="Barbero 1"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="barber-info">
+            <h3>MATÍAS</h3>
+            <span class="barber-role">Senior Barber</span>
+            <p>
+              Especialista en fades, cortes modernos y asesoría visual según el
+              rostro y estilo de cada cliente.
+            </p>
+          </div>
+        </article>
+
+        <article class="barber-card reveal">
+          <div class="barber-photo">
+            <img
+              src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=90"
+              alt="Barbero 2"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="barber-info">
+            <h3>SEBASTIÁN</h3>
+            <span class="barber-role">Beard Specialist</span>
+            <p>
+              Enfocado en barba, perfilado y terminaciones limpias para una
+              imagen fuerte y bien definida.
+            </p>
+          </div>
+        </article>
+
+        <article class="barber-card reveal">
+          <div class="barber-photo">
+            <img
+              src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1200&q=90"
+              alt="Barbero 3"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="barber-info">
+            <h3>DIEGO</h3>
+            <span class="barber-role">Classic Cuts</span>
+            <p>
+              Dominio de cortes clásicos, estructura, textura y acabados con
+              carácter atemporal.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section gallery">
+    <div class="container">
+
+      <div class="eyebrow reveal">Galería</div>
+
+      <h2 class="section-title reveal">
+        CORTES REALES, RESULTADOS CON <span>PRESENCIA</span>
+      </h2>
+
+      <div class="gallery-grid">
+
+        <div class="gallery-item large reveal">
+          <img
+            src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1400&q=90"
+            alt="Galería barbería 1"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="gallery-item small reveal">
+          <img
+            src="https://images.unsplash.com/photo-1512690459411-b0fd1c86b8c8?auto=format&fit=crop&w=900&q=90"
+            alt="Galería barbería 2"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="gallery-item small reveal">
+          <img
+            src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=900&q=90"
+            alt="Galería barbería 3"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="gallery-item small reveal">
+          <img
+            src="https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=900&q=90"
+            alt="Galería barbería 4"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="gallery-item small reveal">
+          <img
+            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=90"
+            alt="Galería barbería 5"
+            loading="lazy"
+          >
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container testimonial-wrap">
+
+      <div>
+        <div class="eyebrow reveal">Opiniones</div>
+
+        <h2 class="section-title reveal">
+          CLIENTES QUE VUELVEN POR EL <span>RESULTADO</span>
+        </h2>
+
+        <p class="section-intro reveal">
+          El objetivo no es solo que te guste tu corte hoy, sino que quieras
+          volver por la experiencia completa.
+        </p>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+
+        <p class="testimonial-text">
+          “Muy buen nivel. Se nota la diferencia en el detalle, la atención y
+          la forma en que entienden exactamente lo que quieres.”
+        </p>
+
+        <div class="testimonial-user">
+          <img
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=90"
+            alt="Cliente"
+            loading="lazy"
+          >
+
+          <div>
+            <strong>Javier R.</strong>
+            <span>Cliente Blackthorn</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section booking" id="reservar">
+    <div class="container booking-grid">
+
+      <div class="booking-copy reveal">
+
+        <div class="eyebrow">Reserva tu hora</div>
+
+        <h2 class="section-title">
+          TU PRÓXIMO CORTE <span>EMPIEZA AQUÍ</span>
+        </h2>
+
+        <p>
+          Completa tus datos y se abrirá WhatsApp con tu solicitud lista para
+          enviar. Rápido, simple y directo.
+        </p>
+
+        <div class="booking-points">
+          <span>• Atención con reserva para evitar esperas.</span>
+          <span>• Horarios flexibles de lunes a sábado.</span>
+          <span>• Asesoría personalizada según tu estilo.</span>
+        </div>
+
+      </div>
+
+      <form class="booking-form reveal" id="bookingForm">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Tu nombre"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input
+              type="tel"
+              id="telefono"
+              placeholder="+56 9..."
+              required
+            >
+          </div>
+
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="servicio">Servicio</label>
+            <select id="servicio">
+              <option>Corte Premium</option>
+              <option>Barba & Perfilado</option>
+              <option>Experiencia Full</option>
+              <option>Quiero asesoría</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="horario">Horario preferido</label>
+            <select id="horario">
+              <option>Mañana</option>
+              <option>Tarde</option>
+              <option>Indistinto</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Comentario</label>
+          <textarea
+            id="mensaje"
+            placeholder="Ej: quiero un fade bajo, mantener largo arriba..."
+          ></textarea>
+        </div>
+
+        <button class="btn btn-gold" type="submit">
+          Solicitar reserva <span>→</span>
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#inicio" class="logo">
+            <span class="logo-mark">B</span>
+
+            <div class="logo-text">
+              <strong>BLACKTHORN</strong>
+              <span>Barber Club</span>
+            </div>
+          </a>
+
+          <p>
+            Barbería premium orientada a cortes, barba y estilo masculino con
+            identidad propia, detalle y atención personalizada.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Navegación</div>
+
+          <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#precios">Precios</a>
+            <a href="#reservar">Reservar</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Contacto</div>
+
+          <div class="footer-links">
+            <a href="#">+56 9 1234 5678</a>
+            <a href="#">hola@blackthorn.cl</a>
+            <a href="#">Instagram ↗</a>
+            <a href="#">TikTok ↗</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Blackthorn Barber Club</span>
+        <span>Barbería · Estilo · Presencia</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/56912345678?text=Hola%20Blackthorn%2C%20quiero%20reservar%20una%20hora"
+    target="_blank"
+    rel="noopener"
+    aria-label="WhatsApp"
+  >
+    <svg viewBox="0 0 32 32">
+      <path d="M19.11 17.43c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.4-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.54-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.37 1 2.7 1.14 2.88.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.65-.68 1.88-1.33.23-.65.23-1.21.16-1.33-.07-.11-.26-.18-.54-.32z"/>
+      <path d="M16.03 3C8.85 3 3.03 8.8 3.03 15.96c0 2.28.6 4.51 1.73 6.47L3 29l6.74-1.76a13 13 0 0 0 6.28 1.6h.01c7.18 0 13-5.81 13-12.96C29.03 8.8 23.21 3 16.03 3zm0 23.65h-.01a10.8 10.8 0 0 1-5.5-1.51l-.39-.23-4 1.05 1.07-3.89-.25-.4a10.71 10.71 0 0 1-1.66-5.71c0-5.94 4.83-10.77 10.76-10.77 2.88 0 5.58 1.12 7.61 3.15a10.69 10.69 0 0 1 3.15 7.62c-.02 5.94-4.84 10.77-10.78 10.77z"/>
+    </svg>
+  </a>
+
+  <script>
+    const header = document.getElementById("header");
+
+    window.addEventListener("scroll", () => {
+      if(window.scrollY > 40){
+        header.classList.add("scrolled");
+      }else{
+        header.classList.remove("scrolled");
+      }
+    });
+
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("mobile-open");
+      menuBtn.textContent = nav.classList.contains("mobile-open") ? "✕" : "☰";
+    });
+
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("mobile-open");
+        menuBtn.textContent = "☰";
+      });
+    });
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold:.12 }
+    );
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    const bookingForm = document.getElementById("bookingForm");
+
+    bookingForm.addEventListener("submit", function(event){
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const telefono = document.getElementById("telefono").value;
+      const servicio = document.getElementById("servicio").value;
+      const horario = document.getElementById("horario").value;
+      const mensaje = document.getElementById("mensaje").value;
+
+      const texto = `Hola Blackthorn.
+Mi nombre es ${nombre}.
+
+Quiero reservar una hora.
+
+Servicio:
+${servicio}
+
+Horario preferido:
+${horario}
+
+Teléfono:
+${telefono}
+
+Comentario:
+${mensaje}`;
+
+      const whatsapp = "56912345678";
+
+      window.open(
+        `https://wa.me/${whatsapp}?text=${encodeURIComponent(texto)}`,
+        "_blank"
+      );
+    });
+  </script>
+
+</body>
+</html>
