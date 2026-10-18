@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BLACKTHORN BARBER CLUB | Barbería Premium</title>
+  <title>BLACKTHORN — Barber Club</title>
 
   <meta
     name="description"
-    content="Barbería premium para cortes, barba y estilo masculino. Reserva tu hora y vive una experiencia de barbería moderna."
-  />
+    content="Blackthorn Barber Club. Cortes, barba y estilo con identidad."
+  >
 
-  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" content="#0b0b0c">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
   <style>
+
+    /* =========================================================
+       BASE
+    ========================================================= */
+
     :root{
-      --bg:#0f0f10;
-      --bg2:#171719;
-      --bg3:#1f1f22;
-      --panel:#141416;
-      --text:#f4f1ea;
-      --soft:#a7a19a;
-      --line:rgba(255,255,255,.10);
-      --gold:#c79a52;
-      --gold2:#e1b56c;
+      --bg:#0b0b0c;
+      --bg2:#111113;
+      --bg3:#171719;
+
+      --text:#f2eee8;
+      --muted:#918a82;
+
+      --gold:#c89a52;
+      --gold-light:#e4ba77;
+
       --white:#ffffff;
-      --shadow:0 25px 70px rgba(0,0,0,.28);
-      --radius:24px;
-      --container:1280px;
-      --transition:.35s cubic-bezier(.2,.7,.2,1);
+
+      --line:rgba(255,255,255,.10);
+
+      --container:1320px;
+
+      --radius:28px;
+
+      --shadow:
+        0 35px 90px rgba(0,0,0,.35);
+
+      --ease:
+        .45s cubic-bezier(.2,.7,.2,1);
     }
+
 
     *{
       margin:0;
@@ -45,169 +60,197 @@
       box-sizing:border-box;
     }
 
+
     html{
       scroll-behavior:smooth;
     }
 
+
     body{
-      font-family:"Inter",sans-serif;
       background:var(--bg);
       color:var(--text);
+
+      font-family:"DM Sans",sans-serif;
+
       overflow-x:hidden;
     }
 
-    img{
-      width:100%;
-      display:block;
+
+    body::before{
+      content:"";
+
+      position:fixed;
+      inset:0;
+
+      pointer-events:none;
+
+      opacity:.035;
+
+      z-index:9999;
+
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
     }
+
+
+    img{
+      display:block;
+      width:100%;
+    }
+
 
     a{
       color:inherit;
       text-decoration:none;
     }
 
+
     button,
     input,
-    textarea,
-    select{
+    select,
+    textarea{
       font:inherit;
     }
 
+
     button{
-      border:0;
+      border:none;
       cursor:pointer;
     }
+
 
     ::selection{
       background:var(--gold);
       color:#111;
     }
 
+
     .container{
       width:min(calc(100% - 48px),var(--container));
-      margin:0 auto;
+      margin:auto;
     }
+
 
     .section{
-      padding:120px 0;
+      padding:130px 0;
     }
 
-    .eyebrow{
-      display:inline-flex;
+
+    .label{
+      display:flex;
       align-items:center;
       gap:12px;
 
-      color:var(--gold2);
+      color:var(--gold-light);
 
       font-size:11px;
-      font-weight:800;
-      letter-spacing:.20em;
-      text-transform:uppercase;
+      font-weight:700;
 
-      margin-bottom:20px;
+      letter-spacing:.18em;
+
+      text-transform:uppercase;
     }
 
-    .eyebrow::before{
+
+    .label::before{
       content:"";
-      width:34px;
+
+      width:35px;
       height:1px;
+
       background:currentColor;
     }
 
-    .section-title{
-      max-width:900px;
 
+    .display{
       font-family:"Bebas Neue",sans-serif;
-      font-size:clamp(50px,6vw,92px);
-      line-height:.95;
-      letter-spacing:.02em;
+
       font-weight:400;
+
+      font-size:
+        clamp(64px,7vw,110px);
+
+      line-height:.9;
+
+      letter-spacing:.015em;
     }
 
-    .section-title span{
+
+    .display span{
       color:var(--gold);
     }
 
-    .section-intro{
-      max-width:650px;
-      margin-top:22px;
 
-      color:var(--soft);
+    .text{
+      max-width:560px;
+
+      color:var(--muted);
+
+      font-size:16px;
+
       line-height:1.8;
-      font-size:17px;
     }
 
-    .btn{
-      min-height:56px;
 
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-
-      padding:0 28px;
-
-      border-radius:999px;
-
-      font-size:14px;
-      font-weight:800;
-
-      transition:var(--transition);
-    }
-
-    .btn-gold{
-      background:var(--gold);
-      color:#121212;
-    }
-
-    .btn-gold:hover{
-      transform:translateY(-3px);
-      background:var(--gold2);
-    }
-
-    .btn-outline{
-      border:1px solid rgba(255,255,255,.20);
-      color:var(--white);
-    }
-
-    .btn-outline:hover{
-      background:var(--white);
-      color:#111;
-      border-color:var(--white);
-    }
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
     header{
       position:fixed;
+
       top:0;
       left:0;
+
       width:100%;
-      z-index:999;
-      padding:20px 0;
-      transition:var(--transition);
+
+      z-index:1000;
+
+      padding:24px 0;
+
+      transition:var(--ease);
     }
 
+
     header.scrolled{
-      padding:12px 0;
-      background:rgba(15,15,16,.92);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-      border-bottom:1px solid var(--line);
+      padding:14px 0;
+
+      background:
+        rgba(11,11,12,.88);
+
+      backdrop-filter:
+        blur(16px);
+
+      -webkit-backdrop-filter:
+        blur(16px);
+
+      border-bottom:
+        1px solid var(--line);
     }
+
 
     .nav{
       display:flex;
+
       align-items:center;
-      justify-content:space-between;
-      gap:30px;
+
+      justify-content:
+        space-between;
+
+      gap:25px;
     }
 
-    .logo{
+
+    .brand{
       display:flex;
+
       align-items:center;
-      gap:14px;
+
+      gap:12px;
     }
 
-    .logo-mark{
+
+    .brand-circle{
       width:42px;
       height:42px;
 
@@ -215,1839 +258,3585 @@
       place-items:center;
 
       border-radius:50%;
-      border:1px solid rgba(255,255,255,.22);
 
-      color:var(--gold2);
+      border:
+        1px solid rgba(255,255,255,.22);
 
-      font-family:"Bebas Neue",sans-serif;
-      font-size:22px;
+      color:var(--gold-light);
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:23px;
+    }
+
+
+    .brand-name{
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:29px;
+
       letter-spacing:.06em;
+
+      line-height:.9;
     }
 
-    .logo-text{
-      line-height:1;
-    }
 
-    .logo-text strong{
+    .brand-sub{
       display:block;
-      font-family:"Bebas Neue",sans-serif;
-      font-size:28px;
-      letter-spacing:.05em;
-      font-weight:400;
-    }
 
-    .logo-text span{
-      display:block;
-      color:var(--soft);
-      font-size:10px;
-      letter-spacing:.24em;
-      text-transform:uppercase;
       margin-top:4px;
+
+      font-family:
+        "DM Sans",sans-serif;
+
+      font-size:9px;
+
+      color:var(--muted);
+
+      letter-spacing:.22em;
+
+      text-transform:uppercase;
     }
+
 
     nav ul{
-      list-style:none;
       display:flex;
+
       align-items:center;
-      gap:34px;
+
+      gap:32px;
+
+      list-style:none;
     }
+
 
     nav a{
-      position:relative;
-      color:#ddd7d0;
-      font-size:13px;
-      font-weight:700;
-      letter-spacing:.04em;
+      font-size:12px;
+
       text-transform:uppercase;
+
+      letter-spacing:.1em;
+
+      font-weight:700;
+
+      color:#ccc5be;
     }
 
-    nav a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-8px;
-      width:0;
-      height:1px;
-      background:var(--gold);
-      transition:.25s;
+
+    nav a:hover{
+      color:var(--gold-light);
     }
 
-    nav a:hover::after{
-      width:100%;
-    }
 
-    .nav-cta{
-      padding:12px 20px;
+    .nav-book{
+      padding:13px 21px;
+
       border-radius:999px;
+
       background:var(--gold);
+
       color:#111;
-      font-size:13px;
+
+      font-size:12px;
+
       font-weight:800;
     }
 
-    .menu-btn{
+
+    .menu{
       display:none;
-      width:46px;
-      height:46px;
+
+      width:44px;
+      height:44px;
+
       border-radius:50%;
-      background:var(--bg3);
-      color:var(--white);
+
+      background:#1b1b1e;
+
+      color:white;
+
       font-size:20px;
     }
 
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
     .hero{
       position:relative;
+
       min-height:100svh;
+
       display:flex;
+
       align-items:center;
+
+      padding:
+        125px 0 60px;
+
       overflow:hidden;
-      padding:150px 0 80px;
-      background:
-        linear-gradient(90deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.60) 48%, rgba(10,10,10,.26) 100%),
-        url("https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=2200&q=90")
-        center/cover no-repeat;
     }
 
-    .hero::after{
-      content:"";
+
+    .hero::before{
+      content:"BLACKTHORN";
+
       position:absolute;
-      inset:0;
-      background:
-        linear-gradient(to top, rgba(0,0,0,.78), transparent 38%);
+
+      top:52%;
+
+      left:50%;
+
+      transform:
+        translate(-50%,-50%);
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:
+        clamp(180px,24vw,430px);
+
+      white-space:nowrap;
+
+      color:white;
+
+      opacity:.018;
+
       pointer-events:none;
     }
 
-    .hero-grid{
+
+    .hero-layout{
       position:relative;
+
       z-index:2;
 
       display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);
-      gap:clamp(40px,6vw,90px);
-      align-items:end;
 
-      padding-inline:clamp(30px,4vw,70px);
-    }
+      grid-template-columns:
+        minmax(0,1.02fr)
+        minmax(380px,.98fr);
 
-    .hero-main{
-      max-width:760px;
-    }
+      gap:
+        clamp(55px,7vw,120px);
 
-    .hero-badge{
-      display:inline-flex;
       align-items:center;
-      gap:10px;
 
-      padding:10px 16px;
-
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:999px;
-
-      color:#ddd7d0;
-      font-size:12px;
-      font-weight:700;
-
-      backdrop-filter:blur(10px);
-      margin-bottom:26px;
+      padding-inline:
+        clamp(28px,4vw,70px);
     }
 
-    .hero-badge span{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#65cf85;
-      box-shadow:0 0 14px #65cf85;
-    }
-
-    .hero h1{
-      font-family:"Bebas Neue",sans-serif;
-      font-size:clamp(82px,10vw,168px);
-      line-height:.88;
-      letter-spacing:.02em;
-      font-weight:400;
-    }
-
-    .hero h1 span{
-      color:var(--gold);
-    }
 
     .hero-copy{
-      max-width:580px;
-      margin-top:24px;
+      position:relative;
 
-      color:#d3cdc6;
-      font-size:18px;
-      line-height:1.8;
+      z-index:3;
     }
+
+
+    .hero-kicker{
+      color:var(--gold-light);
+
+      font-size:11px;
+
+      letter-spacing:.25em;
+
+      text-transform:uppercase;
+
+      margin-bottom:20px;
+    }
+
+
+    .hero h1{
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:
+        clamp(92px,10vw,170px);
+
+      font-weight:400;
+
+      line-height:.78;
+
+      letter-spacing:.01em;
+    }
+
+
+    .hero h1 span{
+      display:block;
+
+      color:var(--gold);
+
+      transform:
+        translateX(8%);
+    }
+
+
+    .hero-desc{
+      max-width:560px;
+
+      margin-top:30px;
+
+      color:#bbb4ad;
+
+      font-size:17px;
+
+      line-height:1.85;
+    }
+
 
     .hero-actions{
       display:flex;
+
       flex-wrap:wrap;
+
       gap:14px;
-      margin-top:38px;
-    }
 
-    .hero-side{
-      padding:32px;
-      border-radius:var(--radius);
-      background:rgba(20,20,22,.68);
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:var(--shadow);
-      backdrop-filter:blur(12px);
-    }
-
-    .hero-side small{
-      display:block;
-      color:var(--gold2);
-      font-size:11px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      margin-bottom:16px;
-    }
-
-    .hero-side strong{
-      display:block;
-      font-family:"Bebas Neue",sans-serif;
-      font-size:60px;
-      letter-spacing:.03em;
-      font-weight:400;
-      line-height:1;
-    }
-
-    .hero-side p{
-      margin-top:14px;
-      color:#c3bdb7;
-      font-size:14px;
-      line-height:1.7;
-    }
-
-    .hero-side-line{
-      height:1px;
-      background:rgba(255,255,255,.10);
-      margin:24px 0;
-    }
-
-    .stats{
-      background:#111214;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-    }
-
-    .stats-item{
-      padding:38px 26px;
-      text-align:center;
-      border-right:1px solid var(--line);
-    }
-
-    .stats-item:last-child{
-      border-right:0;
-    }
-
-    .stats-item strong{
-      display:block;
-      font-family:"Bebas Neue",sans-serif;
-      font-size:46px;
-      color:var(--gold2);
-      font-weight:400;
-      letter-spacing:.03em;
-    }
-
-    .stats-item span{
-      display:block;
-      margin-top:6px;
-      color:var(--soft);
-      font-size:13px;
-    }
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:90px;
-      align-items:center;
-    }
-
-    .about-images{
-      position:relative;
-      min-height:620px;
-    }
-
-    .about-main-image{
-      position:absolute;
-      left:0;
-      top:0;
-      width:76%;
-      height:560px;
-      border-radius:26px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-    }
-
-    .about-main-image img,
-    .about-small-image img{
-      height:100%;
-      object-fit:cover;
-    }
-
-    .about-small-image{
-      position:absolute;
-      right:0;
-      bottom:0;
-      width:45%;
-      height:280px;
-      border-radius:26px;
-      overflow:hidden;
-      border:8px solid var(--bg);
-      box-shadow:var(--shadow);
-    }
-
-    .about-content p{
-      color:var(--soft);
-      line-height:1.85;
-      margin-top:22px;
-    }
-
-    .about-points{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
       margin-top:34px;
     }
 
-    .about-point{
-      padding-top:18px;
-      border-top:1px solid var(--line);
-    }
 
-    .about-point strong{
-      display:block;
-      font-size:15px;
-      margin-bottom:8px;
-    }
+    .btn{
+      min-height:56px;
 
-    .about-point span{
-      color:var(--soft);
+      display:inline-flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      gap:12px;
+
+      padding:0 27px;
+
+      border-radius:999px;
+
       font-size:13px;
-      line-height:1.6;
+
+      font-weight:800;
+
+      transition:var(--ease);
     }
 
-    .services{
-      background:var(--bg2);
+
+    .btn-gold{
+      background:var(--gold);
+
+      color:#111;
     }
 
-    .services-grid{
-      margin-top:70px;
+
+    .btn-gold:hover{
+      transform:
+        translateY(-4px);
+
+      background:
+        var(--gold-light);
+    }
+
+
+    .btn-outline{
+      border:
+        1px solid rgba(255,255,255,.18);
+
+      color:white;
+    }
+
+
+    .btn-outline:hover{
+      border-color:white;
+
+      background:white;
+
+      color:#111;
+    }
+
+
+    /* =========================================================
+       HERO VISUAL
+    ========================================================= */
+
+    .hero-visual{
+      position:relative;
+
+      height:
+        min(720px,72vh);
+
+      min-height:600px;
+    }
+
+
+    .hero-image{
+      position:absolute;
+
+      right:0;
+      top:0;
+
+      width:78%;
+      height:90%;
+
+      overflow:hidden;
+
+      border-radius:
+        160px 20px 20px 20px;
+
+      box-shadow:
+        var(--shadow);
+    }
+
+
+    .hero-image::after{
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.45),
+          transparent 55%
+        );
+    }
+
+
+    .hero-image img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      filter:
+        saturate(.8)
+        contrast(1.05);
+    }
+
+
+    .hero-cutout{
+      position:absolute;
+
+      left:0;
+
+      bottom:4%;
+
+      width:48%;
+
+      padding:28px;
+
+      background:
+        var(--gold);
+
+      color:#111;
+
+      clip-path:
+        polygon(
+          0 0,
+          86% 0,
+          100% 18%,
+          100% 100%,
+          0 100%
+        );
+
+      z-index:3;
+    }
+
+
+    .hero-cutout span{
+      display:block;
+
+      font-size:10px;
+
+      letter-spacing:.18em;
+
+      text-transform:uppercase;
+
+      font-weight:800;
+    }
+
+
+    .hero-cutout strong{
+      display:block;
+
+      margin-top:8px;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:43px;
+
+      font-weight:400;
+
+      line-height:1;
+    }
+
+
+    .hero-vertical{
+      position:absolute;
+
+      right:-4px;
+
+      bottom:3%;
+
+      writing-mode:vertical-rl;
+
+      transform:
+        rotate(180deg);
+
+      font-size:9px;
+
+      letter-spacing:.28em;
+
+      text-transform:uppercase;
+
+      color:#827b74;
+    }
+
+
+    /* =========================================================
+       MARQUEE
+    ========================================================= */
+
+    .marquee{
+      overflow:hidden;
+
+      border-top:
+        1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+
+      background:#0f0f11;
+    }
+
+
+    .marquee-track{
+      width:max-content;
+
+      display:flex;
+
+      align-items:center;
+
+      animation:
+        marquee 28s linear infinite;
+    }
+
+
+    .marquee span{
+      display:flex;
+
+      align-items:center;
+
+      gap:30px;
+
+      padding:
+        20px 28px;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:26px;
+
+      letter-spacing:.08em;
+
+      color:#b5afa8;
+    }
+
+
+    .marquee i{
+      width:7px;
+      height:7px;
+
+      border-radius:50%;
+
+      background:
+        var(--gold);
+    }
+
+
+    @keyframes marquee{
+      from{
+        transform:
+          translateX(0);
+      }
+
+      to{
+        transform:
+          translateX(-50%);
+      }
+    }
+
+
+    /* =========================================================
+       MANIFESTO
+    ========================================================= */
+
+    .manifesto{
+      position:relative;
+
+      padding:
+        160px 0 130px;
+    }
+
+
+    .manifesto-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
+
+      grid-template-columns:
+        .55fr 1.45fr;
+
+      gap:90px;
     }
 
-    .service-card{
+
+    .manifesto-index{
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:180px;
+
+      line-height:.8;
+
+      color:
+        rgba(255,255,255,.035);
+    }
+
+
+    .manifesto h2{
+      max-width:920px;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:
+        clamp(64px,8vw,130px);
+
+      line-height:.88;
+
+      font-weight:400;
+    }
+
+
+    .manifesto h2 span{
+      color:var(--gold);
+    }
+
+
+    .manifesto-bottom{
+      display:grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:50px;
+
+      margin-top:55px;
+
+      padding-top:35px;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+
+    .manifesto-bottom p{
+      color:var(--muted);
+
+      line-height:1.8;
+    }
+
+
+    .manifesto-statement{
+      font-size:20px;
+
+      color:#d6d0c8 !important;
+
+      font-weight:600;
+    }
+
+
+    /* =========================================================
+       SERVICES - DIFFERENT LAYOUT
+    ========================================================= */
+
+    .signature{
+      background:var(--bg2);
+
+      overflow:hidden;
+    }
+
+
+    .signature-head{
+      display:flex;
+
+      justify-content:
+        space-between;
+
+      align-items:flex-end;
+
+      gap:40px;
+
+      margin-bottom:80px;
+    }
+
+
+    .signature-head .text{
+      max-width:430px;
+    }
+
+
+    .service-editorial{
+      display:grid;
+
+      grid-template-columns:
+        repeat(12,1fr);
+
+      gap:24px;
+    }
+
+
+    .editorial-card{
+      position:relative;
+
+      min-height:560px;
+
+      border-radius:
+        var(--radius);
+
+      overflow:hidden;
+
+      background:#18181a;
+
+      border:
+        1px solid var(--line);
+
+      transition:var(--ease);
+    }
+
+
+    .editorial-card:nth-child(1){
+      grid-column:
+        1 / span 5;
+    }
+
+
+    .editorial-card:nth-child(2){
+      grid-column:
+        6 / span 4;
+
+      margin-top:90px;
+    }
+
+
+    .editorial-card:nth-child(3){
+      grid-column:
+        10 / span 3;
+
+      margin-top:180px;
+    }
+
+
+    .editorial-image{
+      height:66%;
+
+      overflow:hidden;
+    }
+
+
+    .editorial-image img{
+      height:100%;
+
+      object-fit:cover;
+
+      transition:.7s ease;
+    }
+
+
+    .editorial-card:hover{
+      transform:
+        translateY(-10px);
+    }
+
+
+    .editorial-card:hover img{
+      transform:
+        scale(1.07);
+    }
+
+
+    .editorial-info{
+      padding:26px;
+    }
+
+
+    .editorial-num{
+      color:var(--gold-light);
+
+      font-size:10px;
+
+      letter-spacing:.2em;
+    }
+
+
+    .editorial-info h3{
+      margin-top:10px;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:40px;
+
+      font-weight:400;
+
+      letter-spacing:.03em;
+    }
+
+
+    .editorial-price{
+      display:flex;
+
+      align-items:center;
+
+      justify-content:
+        space-between;
+
+      gap:20px;
+
+      margin-top:18px;
+
+      padding-top:16px;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+
+    .editorial-price span{
+      color:var(--muted);
+
+      font-size:12px;
+    }
+
+
+    .editorial-price strong{
+      color:var(--gold-light);
+
+      font-size:16px;
+    }
+
+
+    /* =========================================================
+       RITUAL
+    ========================================================= */
+
+    .ritual{
+      position:relative;
+
+      padding:
+        150px 0;
+
+      overflow:hidden;
+    }
+
+
+    .ritual::before{
+      content:"RITUAL";
+
+      position:absolute;
+
+      right:-20px;
+
+      top:20px;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:
+        clamp(180px,25vw,420px);
+
+      color:white;
+
+      opacity:.018;
+
+      line-height:1;
+    }
+
+
+    .ritual-layout{
+      display:grid;
+
+      grid-template-columns:
+        .75fr 1.25fr;
+
+      gap:80px;
+
+      position:relative;
+
+      z-index:2;
+    }
+
+
+    .ritual-title{
+      position:sticky;
+
+      top:130px;
+
+      align-self:start;
+    }
+
+
+    .ritual-steps{
+      display:flex;
+
+      flex-direction:column;
+    }
+
+
+    .ritual-step{
+      display:grid;
+
+      grid-template-columns:
+        80px 1fr auto;
+
+      gap:25px;
+
+      align-items:center;
+
+      padding:32px 0;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+
+    .ritual-step:first-child{
+      border-top:
+        1px solid var(--line);
+    }
+
+
+    .ritual-step .num{
+      color:var(--gold-light);
+
+      font-size:12px;
+
+      font-weight:700;
+    }
+
+
+    .ritual-step h3{
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:38px;
+
+      font-weight:400;
+    }
+
+
+    .ritual-step p{
+      max-width:430px;
+
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.7;
+
+      margin-top:6px;
+    }
+
+
+    .ritual-step .arrow{
+      width:46px;
+      height:46px;
+
+      display:grid;
+      place-items:center;
+
+      border-radius:50%;
+
+      border:
+        1px solid var(--line);
+
+      color:var(--gold-light);
+    }
+
+
+    /* =========================================================
+       LOOKBOOK
+    ========================================================= */
+
+    .lookbook{
+      background:#0e0e10;
+
+      padding:
+        130px 0;
+    }
+
+
+    .lookbook-title{
+      display:flex;
+
+      align-items:flex-end;
+
+      justify-content:
+        space-between;
+
+      gap:40px;
+    }
+
+
+    .lookbook-grid{
+      margin-top:70px;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(12,1fr);
+
+      grid-template-rows:
+        repeat(2,300px);
+
+      gap:18px;
+    }
+
+
+    .look{
+      position:relative;
+
+      overflow:hidden;
+
+      border-radius:22px;
+    }
+
+
+    .look img{
+      width:100%;
+      height:100%;
+
+      object-fit:cover;
+
+      transition:.7s ease;
+    }
+
+
+    .look:hover img{
+      transform:
+        scale(1.07);
+    }
+
+
+    .look::after{
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.5),
+          transparent 50%
+        );
+    }
+
+
+    .look span{
+      position:absolute;
+
+      left:22px;
+      bottom:18px;
+
+      z-index:2;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:27px;
+
+      letter-spacing:.04em;
+    }
+
+
+    .look.one{
+      grid-column:
+        1 / span 5;
+
+      grid-row:
+        1 / span 2;
+    }
+
+
+    .look.two{
+      grid-column:
+        6 / span 4;
+
+      grid-row:1;
+    }
+
+
+    .look.three{
+      grid-column:
+        10 / span 3;
+
+      grid-row:1;
+    }
+
+
+    .look.four{
+      grid-column:
+        6 / span 3;
+
+      grid-row:2;
+    }
+
+
+    .look.five{
+      grid-column:
+        9 / span 4;
+
+      grid-row:2;
+    }
+
+
+    /* =========================================================
+       TEAM
+    ========================================================= */
+
+    .team{
+      padding:
+        150px 0;
+
+      background:var(--bg);
+    }
+
+
+    .team-grid{
+      margin-top:75px;
+
+      display:grid;
+
+      grid-template-columns:
+        1.15fr .85fr;
+
+      gap:26px;
+    }
+
+
+    .barber-main,
+    .barber-secondary{
+      position:relative;
+
+      overflow:hidden;
+
+      border-radius:28px;
+
+      border:
+        1px solid var(--line);
+    }
+
+
+    .barber-main{
+      min-height:650px;
+    }
+
+
+    .barber-secondary{
+      min-height:312px;
+    }
+
+
+    .barber-stack{
+      display:grid;
+
+      grid-template-rows:
+        1fr 1fr;
+
+      gap:26px;
+    }
+
+
+    .barber-main img,
+    .barber-secondary img{
+      position:absolute;
+
+      inset:0;
+
+      height:100%;
+
+      object-fit:cover;
+
+      transition:.7s ease;
+    }
+
+
+    .barber-main:hover img,
+    .barber-secondary:hover img{
+      transform:
+        scale(1.06);
+    }
+
+
+    .barber-overlay{
+      position:absolute;
+
+      inset:0;
+
+      display:flex;
+
+      align-items:flex-end;
+
       padding:30px;
-      background:linear-gradient(180deg, #1b1b1e, #121214);
-      border:1px solid var(--line);
-      border-radius:26px;
-      transition:var(--transition);
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.72),
+          transparent 55%
+        );
+
+      z-index:2;
     }
 
-    .service-card:hover{
-      transform:translateY(-8px);
-      border-color:rgba(199,154,82,.35);
+
+    .barber-overlay h3{
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:48px;
+
+      font-weight:400;
+
+      line-height:1;
+    }
+
+
+    .barber-overlay span{
+      display:block;
+
+      margin-top:5px;
+
+      color:var(--gold-light);
+
+      font-size:10px;
+
+      text-transform:uppercase;
+
+      letter-spacing:.18em;
+    }
+
+
+    /* =========================================================
+       QUOTE
+    ========================================================= */
+
+    .quote-section{
+      padding:
+        150px 0;
+
+      background:var(--gold);
+
+      color:#111;
+    }
+
+
+    .quote-inner{
+      max-width:1100px;
+
+      margin:auto;
+
+      text-align:center;
+    }
+
+
+    .quote-small{
+      font-size:11px;
+
+      letter-spacing:.22em;
+
+      text-transform:uppercase;
+
+      font-weight:800;
+    }
+
+
+    .quote-big{
+      margin-top:30px;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:
+        clamp(65px,8vw,125px);
+
+      line-height:.9;
+
+      font-weight:400;
+    }
+
+
+    .quote-author{
+      margin-top:28px;
+
+      font-size:14px;
+
+      font-weight:700;
+    }
+
+
+    /* =========================================================
+       BOOKING
+    ========================================================= */
+
+    .booking{
+      position:relative;
+
+      padding:
+        150px 0;
+
+      overflow:hidden;
+
+      background:#0c0c0d;
+    }
+
+
+    .booking::before{
+      content:"01";
+
+      position:absolute;
+
+      right:-30px;
+
+      top:10px;
+
+      font-family:
+        "Bebas Neue",sans-serif;
+
+      font-size:
+        clamp(300px,42vw,700px);
+
+      line-height:.8;
+
+      color:white;
+
+      opacity:.018;
+    }
+
+
+    .booking-grid{
+      position:relative;
+
+      z-index:2;
+
+      display:grid;
+
+      grid-template-columns:
+        .9fr 1.1fr;
+
+      gap:100px;
+
+      align-items:start;
+    }
+
+
+    .booking-copy{
+      padding-top:20px;
+    }
+
+
+    .booking-copy p{
+      max-width:480px;
+
+      margin-top:24px;
+
+      color:var(--muted);
+
+      line-height:1.8;
+    }
+
+
+    .booking-data{
+      margin-top:35px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      gap:12px;
+
+      color:#cec8c1;
+
+      font-size:14px;
+    }
+
+
+    .booking-form{
+      padding:42px;
+
+      background:#151517;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:28px;
+
       box-shadow:var(--shadow);
     }
 
-    .service-icon{
+
+    .form-row{
+      display:grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:18px;
+    }
+
+
+    .form-group{
+      margin-bottom:18px;
+    }
+
+
+    .form-group label{
+      display:block;
+
+      margin-bottom:8px;
+
+      color:#817a73;
+
+      font-size:10px;
+
+      text-transform:uppercase;
+
+      letter-spacing:.17em;
+
+      font-weight:700;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      width:100%;
+
+      padding:15px 16px;
+
+      border-radius:14px;
+
+      border:
+        1px solid rgba(255,255,255,.09);
+
+      background:#0e0e10;
+
+      color:white;
+
+      outline:none;
+    }
+
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      border-color:
+        rgba(200,154,82,.65);
+    }
+
+
+    .form-group textarea{
+      min-height:110px;
+
+      resize:vertical;
+    }
+
+
+    .booking-form .btn{
+      width:100%;
+
+      margin-top:7px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer{
+      padding:
+        70px 0 30px;
+
+      border-top:
+        1px solid var(--line);
+
+      background:#080809;
+    }
+
+
+    .footer-top{
+      display:grid;
+
+      grid-template-columns:
+        1.4fr .6fr .6fr;
+
+      gap:70px;
+
+      padding-bottom:55px;
+    }
+
+
+    .footer-text{
+      max-width:420px;
+
+      margin-top:20px;
+
+      color:#77716b;
+
+      font-size:14px;
+
+      line-height:1.7;
+    }
+
+
+    .footer-title{
+      margin-bottom:18px;
+
+      color:#a99069;
+
+      font-size:10px;
+
+      text-transform:uppercase;
+
+      letter-spacing:.2em;
+    }
+
+
+    .footer-links{
+      display:flex;
+
+      flex-direction:column;
+
+      gap:12px;
+    }
+
+
+    .footer-links a{
+      color:#a9a29a;
+
+      font-size:13px;
+    }
+
+
+    .footer-links a:hover{
+      color:var(--gold-light);
+    }
+
+
+    .footer-bottom{
+      display:flex;
+
+      justify-content:
+        space-between;
+
+      gap:20px;
+
+      padding-top:25px;
+
+      border-top:
+        1px solid var(--line);
+
+      color:#5f5a55;
+
+      font-size:11px;
+    }
+
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp{
+      position:fixed;
+
+      right:22px;
+      bottom:22px;
+
+      z-index:900;
+
       width:58px;
       height:58px;
 
       display:grid;
       place-items:center;
 
-      border-radius:18px;
-      background:rgba(199,154,82,.12);
-      color:var(--gold2);
-
-      font-size:24px;
-      margin-bottom:22px;
-    }
-
-    .service-card h3{
-      font-family:"Bebas Neue",sans-serif;
-      font-size:34px;
-      letter-spacing:.03em;
-      font-weight:400;
-    }
-
-    .service-card p{
-      color:var(--soft);
-      font-size:14px;
-      line-height:1.75;
-      margin-top:12px;
-    }
-
-    .service-meta{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-
-      margin-top:24px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-    }
-
-    .service-time{
-      color:#d8d2cb;
-      font-size:13px;
-      font-weight:700;
-    }
-
-    .service-price{
-      color:var(--gold2);
-      font-size:14px;
-      font-weight:800;
-    }
-
-    .pricing-grid{
-      margin-top:70px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
-
-    .price-card{
-      padding:34px 30px;
-      border-radius:26px;
-      border:1px solid var(--line);
-      background:#131315;
-      transition:var(--transition);
-    }
-
-    .price-card.featured{
-      background:linear-gradient(180deg, rgba(199,154,82,.15), rgba(199,154,82,.05) 30%, #131315 100%);
-      border-color:rgba(199,154,82,.35);
-      transform:scale(1.02);
-    }
-
-    .price-card small{
-      display:block;
-      color:var(--gold2);
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      margin-bottom:12px;
-    }
-
-    .price-card h3{
-      font-family:"Bebas Neue",sans-serif;
-      font-size:38px;
-      font-weight:400;
-      letter-spacing:.04em;
-    }
-
-    .price-card strong{
-      display:block;
-      font-family:"Bebas Neue",sans-serif;
-      font-size:66px;
-      line-height:1;
-      color:var(--gold);
-      font-weight:400;
-      margin-top:18px;
-    }
-
-    .price-card strong span{
-      font-size:20px;
-      color:#d7d0c8;
-    }
-
-    .price-card p{
-      margin-top:14px;
-      color:var(--soft);
-      line-height:1.75;
-      font-size:14px;
-    }
-
-    .price-card ul{
-      list-style:none;
-      margin-top:24px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-
-    .price-card li{
-      color:#e5ded6;
-      font-size:14px;
-      padding-left:18px;
-      position:relative;
-    }
-
-    .price-card li::before{
-      content:"•";
-      position:absolute;
-      left:0;
-      color:var(--gold2);
-    }
-
-    .process{
-      background:linear-gradient(180deg, var(--bg), #0b0b0c);
-    }
-
-    .process-grid{
-      margin-top:70px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border-top:1px solid var(--line);
-    }
-
-    .process-card{
-      padding:34px 26px 40px;
-      border-right:1px solid var(--line);
-    }
-
-    .process-card:last-child{
-      border-right:0;
-    }
-
-    .process-num{
-      width:42px;
-      height:42px;
-
-      display:grid;
-      place-items:center;
-
       border-radius:50%;
-      border:1px solid rgba(255,255,255,.12);
 
-      color:var(--gold2);
-      font-size:12px;
-      font-weight:800;
-      margin-bottom:34px;
-    }
-
-    .process-card h3{
-      font-family:"Bebas Neue",sans-serif;
-      font-size:30px;
-      letter-spacing:.03em;
-      font-weight:400;
-    }
-
-    .process-card p{
-      color:var(--soft);
-      font-size:14px;
-      line-height:1.75;
-      margin-top:12px;
-    }
-
-    .barbers-grid{
-      margin-top:70px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
-
-    .barber-card{
-      background:#151517;
-      border:1px solid var(--line);
-      border-radius:28px;
-      overflow:hidden;
-      transition:var(--transition);
-    }
-
-    .barber-card:hover{
-      transform:translateY(-8px);
-      box-shadow:var(--shadow);
-    }
-
-    .barber-photo{
-      height:420px;
-      overflow:hidden;
-    }
-
-    .barber-photo img{
-      height:100%;
-      object-fit:cover;
-      transition:.7s ease;
-    }
-
-    .barber-card:hover .barber-photo img{
-      transform:scale(1.06);
-    }
-
-    .barber-info{
-      padding:26px;
-    }
-
-    .barber-info h3{
-      font-family:"Bebas Neue",sans-serif;
-      font-size:34px;
-      font-weight:400;
-      letter-spacing:.03em;
-    }
-
-    .barber-role{
-      display:block;
-      color:var(--gold2);
-      font-size:12px;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-      margin-top:4px;
-    }
-
-    .barber-info p{
-      color:var(--soft);
-      font-size:14px;
-      line-height:1.75;
-      margin-top:14px;
-    }
-
-    .gallery{
-      background:var(--bg2);
-    }
-
-    .gallery-grid{
-      margin-top:70px;
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:18px;
-    }
-
-    .gallery-item{
-      min-height:280px;
-      border-radius:22px;
-      overflow:hidden;
-      position:relative;
-    }
-
-    .gallery-item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:.7s ease;
-    }
-
-    .gallery-item:hover img{
-      transform:scale(1.06);
-    }
-
-    .gallery-item.large{
-      grid-column:span 6;
-      min-height:420px;
-    }
-
-    .gallery-item.small{
-      grid-column:span 3;
-    }
-
-    .testimonial-wrap{
-      display:grid;
-      grid-template-columns:.8fr 1.2fr;
-      gap:80px;
-      align-items:start;
-    }
-
-    .testimonial-card{
-      padding:46px;
-      border-radius:28px;
-      background:#151517;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-    }
-
-    .stars{
-      color:var(--gold2);
-      letter-spacing:.16em;
-      font-size:15px;
-    }
-
-    .testimonial-text{
-      margin-top:22px;
-      font-size:clamp(24px,3vw,38px);
-      line-height:1.45;
-      font-weight:700;
-    }
-
-    .testimonial-user{
-      display:flex;
-      align-items:center;
-      gap:15px;
-      margin-top:30px;
-      padding-top:22px;
-      border-top:1px solid var(--line);
-    }
-
-    .testimonial-user img{
-      width:52px;
-      height:52px;
-      border-radius:50%;
-      object-fit:cover;
-    }
-
-    .testimonial-user strong{
-      display:block;
-      font-size:14px;
-    }
-
-    .testimonial-user span{
-      display:block;
-      color:var(--soft);
-      font-size:12px;
-      margin-top:3px;
-    }
-
-    .booking{
-      background:linear-gradient(180deg, rgba(199,154,82,.12), rgba(199,154,82,.05) 28%, transparent 100%);
-    }
-
-    .booking-grid{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:90px;
-      align-items:start;
-    }
-
-    .booking-copy p{
-      max-width:500px;
-      margin-top:22px;
-      color:var(--soft);
-      line-height:1.8;
-    }
-
-    .booking-points{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      margin-top:28px;
-    }
-
-    .booking-points span{
-      color:#e1dbd4;
-      font-size:14px;
-    }
-
-    .booking-form{
-      padding:38px;
-      border-radius:28px;
-      background:#151517;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-    }
-
-    .form-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-
-    .form-group{
-      margin-bottom:18px;
-    }
-
-    .form-group label{
-      display:block;
-      margin-bottom:8px;
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      color:var(--soft);
-      font-weight:800;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea{
-      width:100%;
-      padding:15px 16px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.10);
-      background:#101012;
-      color:var(--white);
-      outline:none;
-      transition:.25s;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus{
-      border-color:rgba(199,154,82,.45);
-      background:#0b0b0d;
-    }
-
-    .form-group textarea{
-      min-height:110px;
-      resize:vertical;
-    }
-
-    .booking-form .btn{
-      width:100%;
-      margin-top:8px;
-    }
-
-    footer{
-      padding:80px 0 30px;
-      background:#0b0b0c;
-      border-top:1px solid var(--line);
-    }
-
-    .footer-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr .8fr;
-      gap:70px;
-      padding-bottom:60px;
-    }
-
-    .footer-brand p{
-      max-width:420px;
-      margin-top:22px;
-      color:var(--soft);
-      font-size:14px;
-      line-height:1.75;
-    }
-
-    .footer-title{
-      margin-bottom:18px;
-      color:#c6b18b;
-      font-size:11px;
-      text-transform:uppercase;
-      letter-spacing:.18em;
-    }
-
-    .footer-links{
-      display:flex;
-      flex-direction:column;
-      gap:13px;
-    }
-
-    .footer-links a{
-      color:#ddd7d0;
-      font-size:14px;
-      transition:.25s;
-    }
-
-    .footer-links a:hover{
-      color:var(--gold2);
-      transform:translateX(4px);
-    }
-
-    .footer-bottom{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      padding-top:24px;
-      border-top:1px solid var(--line);
-      color:#7d7770;
-      font-size:12px;
-    }
-
-    .whatsapp{
-      position:fixed;
-      right:24px;
-      bottom:24px;
-      z-index:950;
-
-      width:60px;
-      height:60px;
-
-      display:grid;
-      place-items:center;
-
-      border-radius:50%;
       background:#25d366;
-      color:white;
-      box-shadow:0 16px 35px rgba(0,0,0,.26);
 
-      transition:var(--transition);
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.3);
+
+      transition:var(--ease);
     }
+
 
     .whatsapp:hover{
-      transform:translateY(-5px) scale(1.04);
+      transform:
+        translateY(-5px)
+        scale(1.05);
     }
 
+
     .whatsapp svg{
-      width:28px;
-      height:28px;
-      fill:currentColor;
+      width:27px;
+      height:27px;
+
+      fill:white;
     }
+
+
+    /* =========================================================
+       REVEAL
+    ========================================================= */
 
     .reveal{
       opacity:0;
-      transform:translateY(36px);
-      transition:opacity .8s ease, transform .8s ease;
+
+      transform:
+        translateY(35px);
+
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
     }
+
 
     .reveal.visible{
       opacity:1;
-      transform:translateY(0);
+
+      transform:
+        translateY(0);
     }
 
-    @media(max-width:1100px){
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media(max-width:1050px){
+
       nav ul,
-      .nav-cta{
+      .nav-book{
         display:none;
       }
 
-      .menu-btn{
+
+      .menu{
         display:grid;
+
         place-items:center;
       }
 
+
       nav.mobile-open ul{
         position:fixed;
+
         top:76px;
+
         left:16px;
         right:16px;
 
         display:flex;
+
         flex-direction:column;
+
         align-items:stretch;
+
         gap:0;
 
         padding:18px;
-        border-radius:22px;
-        background:rgba(15,15,16,.98);
-        border:1px solid var(--line);
-        box-shadow:var(--shadow);
+
+        background:
+          rgba(11,11,12,.98);
+
+        border:
+          1px solid var(--line);
+
+        border-radius:20px;
       }
 
-      nav.mobile-open ul li a{
+
+      nav.mobile-open ul a{
         display:block;
-        padding:16px 12px;
+
+        padding:15px 12px;
       }
 
-      .hero-grid,
-      .about-grid,
-      .testimonial-wrap,
+
+      .hero-layout{
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+        padding-inline:25px;
+      }
+
+
+      .hero-visual{
+        height:650px;
+      }
+
+
+      .hero-image{
+        width:72%;
+      }
+
+
+      .manifesto-grid,
+      .ritual-layout,
       .booking-grid{
         grid-template-columns:1fr;
-        gap:50px;
       }
 
-      .hero-side{
-        max-width:420px;
+
+      .ritual-title{
+        position:relative;
+
+        top:auto;
       }
 
-      .services-grid,
-      .pricing-grid,
-      .barbers-grid{
+
+      .editorial-card:nth-child(1){
+        grid-column:
+          1 / span 6;
+      }
+
+
+      .editorial-card:nth-child(2){
+        grid-column:
+          7 / span 6;
+
+        margin-top:70px;
+      }
+
+
+      .editorial-card:nth-child(3){
+        grid-column:
+          3 / span 8;
+
+        margin-top:0;
+      }
+
+
+      .lookbook-grid{
+        grid-template-rows:
+          repeat(3,280px);
+      }
+
+
+      .look.one{
+        grid-column:
+          1 / span 7;
+
+        grid-row:
+          1 / span 2;
+      }
+
+
+      .look.two{
+        grid-column:
+          8 / span 5;
+      }
+
+
+      .look.three{
+        grid-column:
+          8 / span 5;
+
+        grid-row:2;
+      }
+
+
+      .look.four{
+        grid-column:
+          1 / span 5;
+
+        grid-row:3;
+      }
+
+
+      .look.five{
+        grid-column:
+          6 / span 7;
+
+        grid-row:3;
+      }
+
+
+      .team-grid{
+        grid-template-columns:1fr;
+      }
+
+
+      .barber-main{
+        min-height:600px;
+      }
+
+
+      .footer-top{
         grid-template-columns:1fr 1fr;
       }
 
-      .process-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .process-card:nth-child(2){
-        border-right:0;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr 1fr;
-      }
 
       .footer-brand{
-        grid-column:span 2;
+        grid-column:
+          span 2;
       }
 
-      .stats-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .stats-item:nth-child(2){
-        border-right:0;
-      }
-
-      .stats-item{
-        border-bottom:1px solid var(--line);
-      }
-
-      .gallery-item.large{
-        grid-column:span 12;
-      }
-
-      .gallery-item.small{
-        grid-column:span 6;
-      }
     }
 
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
     @media(max-width:700px){
+
       .container{
-        width:min(calc(100% - 30px),var(--container));
+        width:
+          min(
+            calc(100% - 30px),
+            var(--container)
+          );
       }
+
 
       .section{
-        padding:90px 0;
+        padding:
+          90px 0;
       }
+
 
       header{
-        padding:16px 0;
+        padding:
+          16px 0;
       }
+
 
       .hero{
-        padding:130px 0 60px;
-        min-height:92svh;
+        padding:
+          115px 0 55px;
+
+        min-height:auto;
       }
 
-      .hero-grid{
-        padding-inline:8px;
-        gap:34px;
+
+      .hero-layout{
+        padding-inline:5px;
+
+        gap:45px;
       }
+
 
       .hero h1{
-        font-size:clamp(68px,22vw,108px);
+        font-size:
+          clamp(
+            78px,
+            23vw,
+            115px
+          );
       }
 
-      .hero-copy{
-        font-size:16px;
+
+      .hero h1 span{
+        transform:
+          translateX(0);
       }
+
+
+      .hero-desc{
+        font-size:15px;
+      }
+
 
       .hero-actions{
         flex-direction:column;
       }
 
+
       .hero-actions .btn{
         width:100%;
       }
 
-      .stats-item{
-        padding:28px 14px;
+
+      .hero-visual{
+        height:510px;
+
+        min-height:510px;
       }
 
-      .about-images{
+
+      .hero-image{
+        width:88%;
+
+        height:88%;
+
+        border-radius:
+          110px 18px 18px 18px;
+      }
+
+
+      .hero-cutout{
+        width:58%;
+
+        padding:22px;
+      }
+
+
+      .hero-cutout strong{
+        font-size:34px;
+      }
+
+
+      .manifesto{
+        padding:
+          100px 0;
+      }
+
+
+      .manifesto-grid{
+        gap:30px;
+      }
+
+
+      .manifesto-index{
+        font-size:90px;
+      }
+
+
+      .manifesto-bottom{
+        grid-template-columns:1fr;
+
+        gap:20px;
+      }
+
+
+      .signature{
+        padding:
+          90px 0;
+      }
+
+
+      .signature-head{
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        margin-bottom:50px;
+      }
+
+
+      .service-editorial{
+        display:flex;
+
+        flex-direction:column;
+      }
+
+
+      .editorial-card:nth-child(1),
+      .editorial-card:nth-child(2),
+      .editorial-card:nth-child(3){
+        width:100%;
+
+        margin-top:0;
+      }
+
+
+      .editorial-card{
+        min-height:520px;
+      }
+
+
+      .ritual{
+        padding:
+          100px 0;
+      }
+
+
+      .ritual-layout{
+        gap:50px;
+      }
+
+
+      .ritual-step{
+        grid-template-columns:
+          45px 1fr;
+
+        padding:
+          26px 0;
+      }
+
+
+      .ritual-step .arrow{
+        display:none;
+      }
+
+
+      .ritual-step h3{
+        font-size:31px;
+      }
+
+
+      .lookbook{
+        padding:
+          90px 0;
+      }
+
+
+      .lookbook-title{
+        align-items:flex-start;
+
+        flex-direction:column;
+      }
+
+
+      .lookbook-grid{
+        display:flex;
+
+        flex-direction:column;
+      }
+
+
+      .look{
+        min-height:320px;
+      }
+
+
+      .look.one{
+        min-height:470px;
+      }
+
+
+      .team{
+        padding:
+          100px 0;
+      }
+
+
+      .barber-main{
         min-height:500px;
       }
 
-      .about-main-image{
-        width:84%;
-        height:430px;
+
+      .barber-secondary{
+        min-height:330px;
       }
 
-      .about-small-image{
-        width:50%;
-        height:210px;
+
+      .quote-section{
+        padding:
+          100px 0;
       }
 
-      .about-points,
-      .services-grid,
-      .pricing-grid,
-      .barbers-grid,
+
+      .booking{
+        padding:
+          100px 0;
+      }
+
+
+      .booking-grid{
+        gap:50px;
+      }
+
+
+      .booking-form{
+        padding:
+          28px 22px;
+      }
+
+
       .form-row{
         grid-template-columns:1fr;
+
+        gap:0;
       }
 
-      .process-grid{
+
+      .footer-top{
         grid-template-columns:1fr;
+
+        gap:40px;
       }
 
-      .process-card{
-        border-right:0;
-        border-bottom:1px solid var(--line);
-      }
-
-      .barber-photo{
-        height:360px;
-      }
-
-      .gallery-grid{
-        gap:14px;
-      }
-
-      .gallery-item.large,
-      .gallery-item.small{
-        grid-column:span 12;
-      }
-
-      .gallery-item.large{
-        min-height:340px;
-      }
-
-      .gallery-item.small{
-        min-height:260px;
-      }
-
-      .booking-form,
-      .testimonial-card{
-        padding:28px 22px;
-      }
-
-      .footer-grid{
-        grid-template-columns:1fr;
-        gap:44px;
-      }
 
       .footer-brand{
         grid-column:auto;
       }
 
+
       .footer-bottom{
         flex-direction:column;
       }
 
-      .whatsapp{
-        width:56px;
-        height:56px;
-        right:16px;
-        bottom:16px;
-      }
     }
+
   </style>
 </head>
+
+
 <body>
 
-  <header id="header">
-    <div class="container nav">
 
-      <a href="#inicio" class="logo">
-        <span class="logo-mark">B</span>
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-        <div class="logo-text">
-          <strong>BLACKTHORN</strong>
-          <span>Barber Club</span>
-        </div>
-      </a>
+<header id="header">
 
-      <nav id="nav">
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#precios">Precios</a></li>
-          <li><a href="#barberos">Barberos</a></li>
-          <li><a href="#reservar">Reservar</a></li>
-        </ul>
-      </nav>
+  <div class="container nav">
 
-      <a href="#reservar" class="nav-cta">Reservar hora</a>
+    <a href="#inicio" class="brand">
 
-      <button
-        class="menu-btn"
-        id="menuBtn"
-        aria-label="Abrir menú"
-      >
-        ☰
-      </button>
-
-    </div>
-  </header>
-
-  <section class="hero" id="inicio">
-    <div class="container hero-grid">
-
-      <div class="hero-main">
-
-        <div class="hero-badge">
-          <span></span>
-          Abierto hoy · atención con reserva
-        </div>
-
-        <h1>
-          ESTILO <span>CLÁSICO</span><br>
-          ACTITUD MODERNA
-        </h1>
-
-        <p class="hero-copy">
-          Cortes, barba y experiencia premium en una barbería creada para
-          quienes valoran el detalle, la presencia y un buen estilo.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#reservar" class="btn btn-gold">
-            Reserva ahora <span>→</span>
-          </a>
-
-          <a href="#servicios" class="btn btn-outline">
-            Ver servicios
-          </a>
-        </div>
-
-      </div>
-
-      <aside class="hero-side">
-        <small>Blackthorn Experience</small>
-
-        <strong>+8 AÑOS</strong>
-
-        <p>
-          Más que un corte: una experiencia completa de barbería con atención
-          personalizada, técnicas precisas y una estética cuidada.
-        </p>
-
-        <div class="hero-side-line"></div>
-
-        <small>Horario</small>
-
-        <p>
-          Lunes a sábado<br>
-          10:00 a 20:00 hrs
-        </p>
-      </aside>
-
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="container stats-grid">
-
-      <div class="stats-item">
-        <strong>2.500+</strong>
-        <span>Clientes atendidos</span>
-      </div>
-
-      <div class="stats-item">
-        <strong>4.9★</strong>
-        <span>Valoración promedio</span>
-      </div>
-
-      <div class="stats-item">
-        <strong>8+</strong>
-        <span>Años de experiencia</span>
-      </div>
-
-      <div class="stats-item">
-        <strong>100%</strong>
-        <span>Atención personalizada</span>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section" id="nosotros">
-    <div class="container about-grid">
-
-      <div class="about-images reveal">
-
-        <div class="about-main-image">
-          <img
-            src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1200&q=90"
-            alt="Barbería profesional"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="about-small-image">
-          <img
-            src="https://images.unsplash.com/photo-1512690459411-b0fd1c86b8c8?auto=format&fit=crop&w=900&q=90"
-            alt="Detalle barbería"
-            loading="lazy"
-          >
-        </div>
-
-      </div>
-
-      <div class="about-content reveal">
-
-        <div class="eyebrow">Nuestra barbería</div>
-
-        <h2 class="section-title">
-          UNA BARBERÍA CON <span>IDENTIDAD</span>
-        </h2>
-
-        <p>
-          En Blackthorn mezclamos el carácter de la barbería clásica con una
-          ejecución moderna. Cuidamos el corte, el perfilado y el ambiente para
-          que cada visita se sienta distinta.
-        </p>
-
-        <p>
-          Aquí no vienes solo por un servicio. Vienes por atención, precisión y
-          una imagen que realmente te represente.
-        </p>
-
-        <div class="about-points">
-
-          <div class="about-point">
-            <strong>Cortes precisos</strong>
-            <span>Fade, clásico, moderno y asesoría según tu estilo.</span>
-          </div>
-
-          <div class="about-point">
-            <strong>Barba & perfilado</strong>
-            <span>Diseño y terminación cuidada para una presencia impecable.</span>
-          </div>
-
-          <div class="about-point">
-            <strong>Ambiente premium</strong>
-            <span>Un espacio con carácter, cómodo y visualmente potente.</span>
-          </div>
-
-          <div class="about-point">
-            <strong>Atención cercana</strong>
-            <span>Escuchamos lo que quieres y proponemos lo que te favorece.</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section services" id="servicios">
-    <div class="container">
-
-      <div class="eyebrow reveal">Servicios principales</div>
-
-      <h2 class="section-title reveal">
-        TODO LO NECESARIO PARA TU <span>MEJOR VERSIÓN</span>
-      </h2>
-
-      <p class="section-intro reveal">
-        Servicios pensados para que salgas con mejor presencia, mejor estilo y
-        una experiencia a la altura.
-      </p>
-
-      <div class="services-grid">
-
-        <article class="service-card reveal">
-          <div class="service-icon">✂</div>
-          <h3>Corte Premium</h3>
-          <p>
-            Corte con asesoría, lavado y terminación cuidada para un resultado
-            limpio, moderno y adaptable a tu estilo.
-          </p>
-
-          <div class="service-meta">
-            <span class="service-time">45 min</span>
-            <span class="service-price">$12.000</span>
-          </div>
-        </article>
-
-        <article class="service-card reveal">
-          <div class="service-icon">🧔</div>
-          <h3>Barba & Perfilado</h3>
-          <p>
-            Diseño de barba, perfilado y definición para una imagen más ordenada,
-            elegante y equilibrada.
-          </p>
-
-          <div class="service-meta">
-            <span class="service-time">30 min</span>
-            <span class="service-price">$8.000</span>
-          </div>
-        </article>
-
-        <article class="service-card reveal">
-          <div class="service-icon">★</div>
-          <h3>Experiencia Full</h3>
-          <p>
-            Corte premium + barba + detalle final. La experiencia completa para
-            salir impecable.
-          </p>
-
-          <div class="service-meta">
-            <span class="service-time">70 min</span>
-            <span class="service-price">$18.000</span>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section" id="precios">
-    <div class="container">
-
-      <div class="eyebrow reveal">Precios</div>
-
-      <h2 class="section-title reveal">
-        PLANES CLAROS, RESULTADOS <span>SÓLIDOS</span>
-      </h2>
-
-      <p class="section-intro reveal">
-        Puedes tomar un servicio específico o elegir una experiencia más
-        completa según lo que necesites.
-      </p>
-
-      <div class="pricing-grid">
-
-        <div class="price-card reveal">
-          <small>Servicio individual</small>
-          <h3>CORTE</h3>
-          <strong>$12<span>.000</span></strong>
-          <p>
-            Ideal para mantener tu look fresco, limpio y bien trabajado.
-          </p>
-
-          <ul>
-            <li>Corte con asesoría</li>
-            <li>Perfilado básico</li>
-            <li>Terminación profesional</li>
-          </ul>
-        </div>
-
-        <div class="price-card featured reveal">
-          <small>Más solicitado</small>
-          <h3>FULL EXPERIENCE</h3>
-          <strong>$18<span>.000</span></strong>
-          <p>
-            La opción más completa para renovar tu imagen en una sola visita.
-          </p>
-
-          <ul>
-            <li>Corte premium</li>
-            <li>Barba y perfilado</li>
-            <li>Toque final y styling</li>
-          </ul>
-        </div>
-
-        <div class="price-card reveal">
-          <small>Detalle</small>
-          <h3>BARBA</h3>
-          <strong>$8<span>.000</span></strong>
-          <p>
-            Perfecto si quieres mantener definición, orden y presencia.
-          </p>
-
-          <ul>
-            <li>Diseño de barba</li>
-            <li>Perfilado y limpieza</li>
-            <li>Terminación precisa</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section process">
-    <div class="container">
-
-      <div class="eyebrow reveal">La experiencia</div>
-
-      <h2 class="section-title reveal">
-        ASÍ FUNCIONA TU VISITA A <span>BLACKTHORN</span>
-      </h2>
-
-      <div class="process-grid">
-
-        <div class="process-card reveal">
-          <div class="process-num">01</div>
-          <h3>Reserva</h3>
-          <p>
-            Agendas tu hora por WhatsApp en pocos segundos y eliges tu servicio.
-          </p>
-        </div>
-
-        <div class="process-card reveal">
-          <div class="process-num">02</div>
-          <h3>Asesoría</h3>
-          <p>
-            Conversamos contigo para definir el estilo, largo y forma que mejor te queda.
-          </p>
-        </div>
-
-        <div class="process-card reveal">
-          <div class="process-num">03</div>
-          <h3>Ejecución</h3>
-          <p>
-            Trabajamos tu corte o barba con detalle, precisión y limpieza.
-          </p>
-        </div>
-
-        <div class="process-card reveal">
-          <div class="process-num">04</div>
-          <h3>Resultado</h3>
-          <p>
-            Sales con una imagen más sólida, cuidada y lista para destacar.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section" id="barberos">
-    <div class="container">
-
-      <div class="eyebrow reveal">Nuestro equipo</div>
-
-      <h2 class="section-title reveal">
-        BARBEROS CON ESTILO, TÉCNICA Y <span>PERSONALIDAD</span>
-      </h2>
-
-      <p class="section-intro reveal">
-        Cada profesional aporta su sello, pero todos comparten el mismo estándar:
-        detalle, precisión y atención de alto nivel.
-      </p>
-
-      <div class="barbers-grid">
-
-        <article class="barber-card reveal">
-          <div class="barber-photo">
-            <img
-              src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=90"
-              alt="Barbero 1"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="barber-info">
-            <h3>MATÍAS</h3>
-            <span class="barber-role">Senior Barber</span>
-            <p>
-              Especialista en fades, cortes modernos y asesoría visual según el
-              rostro y estilo de cada cliente.
-            </p>
-          </div>
-        </article>
-
-        <article class="barber-card reveal">
-          <div class="barber-photo">
-            <img
-              src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=90"
-              alt="Barbero 2"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="barber-info">
-            <h3>SEBASTIÁN</h3>
-            <span class="barber-role">Beard Specialist</span>
-            <p>
-              Enfocado en barba, perfilado y terminaciones limpias para una
-              imagen fuerte y bien definida.
-            </p>
-          </div>
-        </article>
-
-        <article class="barber-card reveal">
-          <div class="barber-photo">
-            <img
-              src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1200&q=90"
-              alt="Barbero 3"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="barber-info">
-            <h3>DIEGO</h3>
-            <span class="barber-role">Classic Cuts</span>
-            <p>
-              Dominio de cortes clásicos, estructura, textura y acabados con
-              carácter atemporal.
-            </p>
-          </div>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section gallery">
-    <div class="container">
-
-      <div class="eyebrow reveal">Galería</div>
-
-      <h2 class="section-title reveal">
-        CORTES REALES, RESULTADOS CON <span>PRESENCIA</span>
-      </h2>
-
-      <div class="gallery-grid">
-
-        <div class="gallery-item large reveal">
-          <img
-            src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1400&q=90"
-            alt="Galería barbería 1"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery-item small reveal">
-          <img
-            src="https://images.unsplash.com/photo-1512690459411-b0fd1c86b8c8?auto=format&fit=crop&w=900&q=90"
-            alt="Galería barbería 2"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery-item small reveal">
-          <img
-            src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=900&q=90"
-            alt="Galería barbería 3"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery-item small reveal">
-          <img
-            src="https://images.unsplash.com/photo-1622296089863-eb7fc530daa8?auto=format&fit=crop&w=900&q=90"
-            alt="Galería barbería 4"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery-item small reveal">
-          <img
-            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=90"
-            alt="Galería barbería 5"
-            loading="lazy"
-          >
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container testimonial-wrap">
+      <span class="brand-circle">
+        B
+      </span>
 
       <div>
-        <div class="eyebrow reveal">Opiniones</div>
 
-        <h2 class="section-title reveal">
-          CLIENTES QUE VUELVEN POR EL <span>RESULTADO</span>
-        </h2>
+        <div class="brand-name">
+          BLACKTHORN
+        </div>
 
-        <p class="section-intro reveal">
-          El objetivo no es solo que te guste tu corte hoy, sino que quieras
-          volver por la experiencia completa.
-        </p>
+        <span class="brand-sub">
+          Barber Club
+        </span>
+
       </div>
 
-      <div class="testimonial-card reveal">
-        <div class="stars">★★★★★</div>
+    </a>
 
-        <p class="testimonial-text">
-          “Muy buen nivel. Se nota la diferencia en el detalle, la atención y
-          la forma en que entienden exactamente lo que quieres.”
+
+    <nav id="nav">
+
+      <ul>
+
+        <li>
+          <a href="#inicio">
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a href="#servicios">
+            Servicios
+          </a>
+        </li>
+
+        <li>
+          <a href="#ritual">
+            Experiencia
+          </a>
+        </li>
+
+        <li>
+          <a href="#equipo">
+            Barberos
+          </a>
+        </li>
+
+        <li>
+          <a href="#reserva">
+            Contacto
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+
+    <a href="#reserva" class="nav-book">
+      Reservar
+    </a>
+
+
+    <button
+      class="menu"
+      id="menuBtn"
+      aria-label="Abrir menú"
+    >
+      ☰
+    </button>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="inicio">
+
+  <div class="container hero-layout">
+
+
+    <div class="hero-copy">
+
+      <div class="hero-kicker">
+        BLACKTHORN · BARBER CLUB
+      </div>
+
+
+      <h1>
+
+        CORTE.
+
+        <span>
+          CARÁCTER.
+        </span>
+
+        PRESENCIA.
+
+      </h1>
+
+
+      <p class="hero-desc">
+
+        Una barbería creada para hombres que entienden
+        que el estilo no comienza en la ropa.
+        Comienza en los detalles.
+
+      </p>
+
+
+      <div class="hero-actions">
+
+        <a
+          href="#reserva"
+          class="btn btn-gold"
+        >
+          Reservar mi hora
+          <span>→</span>
+        </a>
+
+
+        <a
+          href="#servicios"
+          class="btn btn-outline"
+        >
+          Explorar servicios
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="hero-visual">
+
+      <div
+        class="hero-image"
+        id="heroImage"
+      >
+
+        <img
+          src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1600&q=90"
+          alt="Barbería premium"
+        >
+
+      </div>
+
+
+      <div class="hero-cutout">
+
+        <span>
+          Blackthorn Signature
+        </span>
+
+        <strong>
+          CORTE + BARBA
+        </strong>
+
+      </div>
+
+
+      <div class="hero-vertical">
+        Barber Culture · Santiago · Chile
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MARQUEE
+========================================================= -->
+
+<div class="marquee">
+
+  <div class="marquee-track">
+
+    <span>
+      FADE
+      <i></i>
+      CLASSIC CUT
+      <i></i>
+      BEARD
+      <i></i>
+      HOT TOWEL
+      <i></i>
+      TEXTURE
+      <i></i>
+      BLACKTHORN
+      <i></i>
+    </span>
+
+    <span>
+      FADE
+      <i></i>
+      CLASSIC CUT
+      <i></i>
+      BEARD
+      <i></i>
+      HOT TOWEL
+      <i></i>
+      TEXTURE
+      <i></i>
+      BLACKTHORN
+      <i></i>
+    </span>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MANIFESTO
+========================================================= -->
+
+<section class="manifesto">
+
+  <div class="container manifesto-grid">
+
+
+    <div class="manifesto-index reveal">
+      01
+    </div>
+
+
+    <div>
+
+      <div class="label reveal">
+        Nuestra idea
+      </div>
+
+
+      <h2 class="reveal">
+
+        NO QUEREMOS SER
+
+        <span>
+          OTRA BARBERÍA.
+        </span>
+
+      </h2>
+
+
+      <div class="manifesto-bottom reveal">
+
+
+        <p class="manifesto-statement">
+
+          Queremos que sentarte en una de nuestras
+          sillas se sienta como entrar en un lugar
+          que tiene una cultura propia.
+
         </p>
 
-        <div class="testimonial-user">
+
+        <p>
+
+          Blackthorn mezcla precisión moderna,
+          técnicas tradicionales y una estética
+          masculina más editorial. Cada corte
+          comienza entendiendo quién eres,
+          no copiando una fotografía.
+
+        </p>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICIOS
+========================================================= -->
+
+<section
+  class="section signature"
+  id="servicios"
+>
+
+  <div class="container">
+
+
+    <div class="signature-head">
+
+
+      <div>
+
+        <div class="label reveal">
+          Servicios
+        </div>
+
+
+        <h2 class="display reveal">
+          NUESTRAS
+          <span>FIRMAS.</span>
+        </h2>
+
+      </div>
+
+
+      <p class="text reveal">
+
+        Tres servicios principales.
+        Sin menús eternos. Cada uno diseñado para
+        resolver una necesidad concreta y hacerlo bien.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="service-editorial">
+
+
+      <article class="editorial-card reveal">
+
+        <div class="editorial-image">
+
           <img
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=90"
-            alt="Cliente"
+            src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=90"
+            alt="Corte premium"
             loading="lazy"
           >
 
-          <div>
-            <strong>Javier R.</strong>
-            <span>Cliente Blackthorn</span>
-          </div>
         </div>
-      </div>
+
+
+        <div class="editorial-info">
+
+          <span class="editorial-num">
+            SIGNATURE 01
+          </span>
+
+
+          <h3>
+            CORTE BLACKTHORN
+          </h3>
+
+
+          <div class="editorial-price">
+
+            <span>
+              45 minutos
+            </span>
+
+            <strong>
+              $12.000
+            </strong>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="editorial-card reveal">
+
+        <div class="editorial-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1512690459411-b0fd1c86b8c8?auto=format&fit=crop&w=1100&q=90"
+            alt="Barba"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="editorial-info">
+
+          <span class="editorial-num">
+            SIGNATURE 02
+          </span>
+
+
+          <h3>
+            BEARD RITUAL
+          </h3>
+
+
+          <div class="editorial-price">
+
+            <span>
+              30 minutos
+            </span>
+
+            <strong>
+              $8.000
+            </strong>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <article class="editorial-card reveal">
+
+        <div class="editorial-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1100&q=90"
+            alt="Experiencia completa"
+            loading="lazy"
+          >
+
+        </div>
+
+
+        <div class="editorial-info">
+
+          <span class="editorial-num">
+            SIGNATURE 03
+          </span>
+
+
+          <h3>
+            THE FULL
+          </h3>
+
+
+          <div class="editorial-price">
+
+            <span>
+              70 minutos
+            </span>
+
+            <strong>
+              $18.000
+            </strong>
+
+          </div>
+
+        </div>
+
+      </article>
+
 
     </div>
-  </section>
 
-  <section class="section booking" id="reservar">
-    <div class="container booking-grid">
 
-      <div class="booking-copy reveal">
+  </div>
 
-        <div class="eyebrow">Reserva tu hora</div>
+</section>
 
-        <h2 class="section-title">
-          TU PRÓXIMO CORTE <span>EMPIEZA AQUÍ</span>
-        </h2>
 
-        <p>
-          Completa tus datos y se abrirá WhatsApp con tu solicitud lista para
-          enviar. Rápido, simple y directo.
-        </p>
 
-        <div class="booking-points">
-          <span>• Atención con reserva para evitar esperas.</span>
-          <span>• Horarios flexibles de lunes a sábado.</span>
-          <span>• Asesoría personalizada según tu estilo.</span>
-        </div>
+<!-- =========================================================
+     RITUAL
+========================================================= -->
 
+<section
+  class="ritual"
+  id="ritual"
+>
+
+  <div class="container ritual-layout">
+
+
+    <div class="ritual-title">
+
+      <div class="label reveal">
+        El ritual
       </div>
 
-      <form class="booking-form reveal" id="bookingForm">
 
-        <div class="form-row">
+      <h2 class="display reveal">
 
-          <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input
-              type="text"
-              id="nombre"
-              placeholder="Tu nombre"
-              required
-            >
-          </div>
+        CUATRO
 
-          <div class="form-group">
-            <label for="telefono">Teléfono</label>
-            <input
-              type="tel"
-              id="telefono"
-              placeholder="+56 9..."
-              required
-            >
-          </div>
+        <span>
+          MOMENTOS.
+        </span>
 
-        </div>
+      </h2>
 
-        <div class="form-row">
 
-          <div class="form-group">
-            <label for="servicio">Servicio</label>
-            <select id="servicio">
-              <option>Corte Premium</option>
-              <option>Barba & Perfilado</option>
-              <option>Experiencia Full</option>
-              <option>Quiero asesoría</option>
-            </select>
-          </div>
+      <p class="text reveal" style="margin-top:25px">
 
-          <div class="form-group">
-            <label for="horario">Horario preferido</label>
-            <select id="horario">
-              <option>Mañana</option>
-              <option>Tarde</option>
-              <option>Indistinto</option>
-            </select>
-          </div>
+        No queremos que la experiencia sea entrar,
+        cortar y salir.
 
-        </div>
-
-        <div class="form-group">
-          <label for="mensaje">Comentario</label>
-          <textarea
-            id="mensaje"
-            placeholder="Ej: quiero un fade bajo, mantener largo arriba..."
-          ></textarea>
-        </div>
-
-        <button class="btn btn-gold" type="submit">
-          Solicitar reserva <span>→</span>
-        </button>
-
-      </form>
+      </p>
 
     </div>
-  </section>
 
-  <footer>
-    <div class="container">
 
-      <div class="footer-grid">
 
-        <div class="footer-brand">
-          <a href="#inicio" class="logo">
-            <span class="logo-mark">B</span>
+    <div class="ritual-steps">
 
-            <div class="logo-text">
-              <strong>BLACKTHORN</strong>
-              <span>Barber Club</span>
-            </div>
-          </a>
+
+      <div class="ritual-step reveal">
+
+        <div class="num">
+          01
+        </div>
+
+        <div>
+
+          <h3>
+            LEE TU ESTILO
+          </h3>
 
           <p>
-            Barbería premium orientada a cortes, barba y estilo masculino con
-            identidad propia, detalle y atención personalizada.
+            Observamos rostro, tipo de cabello,
+            barba y estilo personal antes de comenzar.
           </p>
+
         </div>
 
-        <div>
-          <div class="footer-title">Navegación</div>
-
-          <div class="footer-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#precios">Precios</a>
-            <a href="#reservar">Reservar</a>
-          </div>
-        </div>
-
-        <div>
-          <div class="footer-title">Contacto</div>
-
-          <div class="footer-links">
-            <a href="#">+56 9 1234 5678</a>
-            <a href="#">hola@blackthorn.cl</a>
-            <a href="#">Instagram ↗</a>
-            <a href="#">TikTok ↗</a>
-          </div>
-        </div>
+        <span class="arrow">
+          ↗
+        </span>
 
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2026 Blackthorn Barber Club</span>
-        <span>Barbería · Estilo · Presencia</span>
+
+
+      <div class="ritual-step reveal">
+
+        <div class="num">
+          02
+        </div>
+
+        <div>
+
+          <h3>
+            DISEÑA EL CORTE
+          </h3>
+
+          <p>
+            No copiamos. Adaptamos el corte para
+            que funcione contigo.
+          </p>
+
+        </div>
+
+        <span class="arrow">
+          ↗
+        </span>
+
       </div>
+
+
+
+      <div class="ritual-step reveal">
+
+        <div class="num">
+          03
+        </div>
+
+        <div>
+
+          <h3>
+            TRABAJA EL DETALLE
+          </h3>
+
+          <p>
+            Líneas, textura, transición y terminaciones
+            reciben el mismo nivel de atención.
+          </p>
+
+        </div>
+
+        <span class="arrow">
+          ↗
+        </span>
+
+      </div>
+
+
+
+      <div class="ritual-step reveal">
+
+        <div class="num">
+          04
+        </div>
+
+        <div>
+
+          <h3>
+            TERMINA TU LOOK
+          </h3>
+
+          <p>
+            Styling y recomendaciones para mantener
+            el resultado en los días siguientes.
+          </p>
+
+        </div>
+
+        <span class="arrow">
+          ↗
+        </span>
+
+      </div>
+
 
     </div>
-  </footer>
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/56912345678?text=Hola%20Blackthorn%2C%20quiero%20reservar%20una%20hora"
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp"
-  >
-    <svg viewBox="0 0 32 32">
-      <path d="M19.11 17.43c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.4-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.54-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.37 1 2.7 1.14 2.88.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.65-.68 1.88-1.33.23-.65.23-1.21.16-1.33-.07-.11-.26-.18-.54-.32z"/>
-      <path d="M16.03 3C8.85 3 3.03 8.8 3.03 15.96c0 2.28.6 4.51 1.73 6.47L3 29l6.74-1.76a13 13 0 0 0 6.28 1.6h.01c7.18 0 13-5.81 13-12.96C29.03 8.8 23.21 3 16.03 3zm0 23.65h-.01a10.8 10.8 0 0 1-5.5-1.51l-.39-.23-4 1.05 1.07-3.89-.25-.4a10.71 10.71 0 0 1-1.66-5.71c0-5.94 4.83-10.77 10.76-10.77 2.88 0 5.58 1.12 7.61 3.15a10.69 10.69 0 0 1 3.15 7.62c-.02 5.94-4.84 10.77-10.78 10.77z"/>
-    </svg>
-  </a>
 
-  <script>
-    const header = document.getElementById("header");
+  </div>
 
-    window.addEventListener("scroll", () => {
+</section>
+
+
+
+<!-- =========================================================
+     LOOKBOOK
+========================================================= -->
+
+<section class="lookbook">
+
+  <div class="container">
+
+
+    <div class="lookbook-title">
+
+
+      <div>
+
+        <div class="label reveal">
+          Lookbook
+        </div>
+
+
+        <h2 class="display reveal">
+
+          NO HAY DOS
+
+          <span>
+            IGUALES.
+          </span>
+
+        </h2>
+
+      </div>
+
+
+      <p class="text reveal">
+
+        Diferentes rostros.
+        Diferentes estilos.
+        La misma obsesión por el detalle.
+
+      </p>
+
+
+    </div>
+
+
+
+    <div class="lookbook-grid">
+
+
+      <div class="look one reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1400&q=90"
+          alt="Look 1"
+          loading="lazy"
+        >
+
+        <span>
+          LOW FADE
+        </span>
+
+      </div>
+
+
+
+      <div class="look two reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=90"
+          alt="Look 2"
+          loading="lazy"
+        >
+
+        <span>
+          TEXTURE
+        </span>
+
+      </div>
+
+
+
+      <div class="look three reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=90"
+          alt="Look 3"
+          loading="lazy"
+        >
+
+        <span>
+          BEARD
+        </span>
+
+      </div>
+
+
+
+      <div class="look four reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=90"
+          alt="Look 4"
+          loading="lazy"
+        >
+
+        <span>
+          CLASSIC
+        </span>
+
+      </div>
+
+
+
+      <div class="look five reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1503951458645-643d53bfd90f?auto=format&fit=crop&w=1100&q=90"
+          alt="Look 5"
+          loading="lazy"
+        >
+
+        <span>
+          SIGNATURE
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EQUIPO
+========================================================= -->
+
+<section
+  class="team"
+  id="equipo"
+>
+
+  <div class="container">
+
+
+    <div class="label reveal">
+      The Crew
+    </div>
+
+
+    <h2
+      class="display reveal"
+      style="margin-top:20px"
+    >
+
+      LAS MANOS
+
+      <span>
+        DETRÁS DEL ESTILO.
+      </span>
+
+    </h2>
+
+
+
+    <div class="team-grid">
+
+
+      <article class="barber-main reveal">
+
+        <img
+          src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1400&q=90"
+          alt="Matías"
+          loading="lazy"
+        >
+
+
+        <div class="barber-overlay">
+
+          <div>
+
+            <h3>
+              MATÍAS
+            </h3>
+
+            <span>
+              Senior barber · fades
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <div class="barber-stack">
+
+
+        <article class="barber-secondary reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1100&q=90"
+            alt="Sebastián"
+            loading="lazy"
+          >
+
+
+          <div class="barber-overlay">
+
+            <div>
+
+              <h3>
+                SEBASTIÁN
+              </h3>
+
+              <span>
+                Beard specialist
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="barber-secondary reveal">
+
+          <img
+            src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1100&q=90"
+            alt="Diego"
+            loading="lazy"
+          >
+
+
+          <div class="barber-overlay">
+
+            <div>
+
+              <h3>
+                DIEGO
+              </h3>
+
+              <span>
+                Classic cuts
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     QUOTE
+========================================================= -->
+
+<section class="quote-section">
+
+  <div class="container quote-inner reveal">
+
+
+    <div class="quote-small">
+      Opinión de cliente
+    </div>
+
+
+    <div class="quote-big">
+
+      “NO SENTÍ QUE ME HICIERAN
+
+      UN CORTE.
+
+      SENTÍ QUE ENTENDIERON
+
+      CÓMO QUERÍA VERME.”
+
+    </div>
+
+
+    <div class="quote-author">
+      JAVIER R. · CLIENTE BLACKTHORN
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     BOOKING
+========================================================= -->
+
+<section
+  class="booking"
+  id="reserva"
+>
+
+  <div class="container booking-grid">
+
+
+    <div class="booking-copy">
+
+
+      <div class="label reveal">
+        Reserva
+      </div>
+
+
+      <h2
+        class="display reveal"
+        style="margin-top:20px"
+      >
+
+        TU SILLA
+
+        <span>
+          TE ESPERA.
+        </span>
+
+      </h2>
+
+
+      <p class="reveal">
+
+        Elige tu servicio y horario preferido.
+        Al continuar se abrirá WhatsApp con tu
+        solicitud lista para enviar.
+
+      </p>
+
+
+      <div class="booking-data reveal">
+
+        <span>
+          Lunes — sábado · 10:00 a 20:00
+        </span>
+
+        <span>
+          +56 9 1234 5678
+        </span>
+
+        <span>
+          Santiago · Chile
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+
+    <form
+      class="booking-form reveal"
+      id="bookingForm"
+    >
+
+
+      <div class="form-row">
+
+
+        <div class="form-group">
+
+          <label for="nombre">
+            Nombre
+          </label>
+
+          <input
+            id="nombre"
+            type="text"
+            placeholder="Tu nombre"
+            required
+          >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label for="telefono">
+            Teléfono
+          </label>
+
+          <input
+            id="telefono"
+            type="tel"
+            placeholder="+56 9..."
+            required
+          >
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="form-row">
+
+
+        <div class="form-group">
+
+          <label for="servicio">
+            Servicio
+          </label>
+
+          <select id="servicio">
+
+            <option>
+              Corte Blackthorn
+            </option>
+
+            <option>
+              Beard Ritual
+            </option>
+
+            <option>
+              The Full
+            </option>
+
+          </select>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+          <label for="horario">
+            Horario
+          </label>
+
+          <select id="horario">
+
+            <option>
+              Mañana
+            </option>
+
+            <option>
+              Tarde
+            </option>
+
+            <option>
+              Última hora
+            </option>
+
+            <option>
+              Indistinto
+            </option>
+
+          </select>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="form-group">
+
+        <label for="mensaje">
+          ¿Qué tienes en mente?
+        </label>
+
+        <textarea
+          id="mensaje"
+          placeholder="Ej: fade bajo, mantener largo arriba..."
+        ></textarea>
+
+      </div>
+
+
+
+      <button
+        class="btn btn-gold"
+        type="submit"
+      >
+
+        Reservar por WhatsApp
+
+        <span>
+          →
+        </span>
+
+      </button>
+
+
+    </form>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container">
+
+
+    <div class="footer-top">
+
+
+      <div class="footer-brand">
+
+        <a href="#inicio" class="brand">
+
+          <span class="brand-circle">
+            B
+          </span>
+
+          <div>
+
+            <div class="brand-name">
+              BLACKTHORN
+            </div>
+
+            <span class="brand-sub">
+              Barber Club
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <p class="footer-text">
+
+          Barbería contemporánea para quienes buscan
+          algo más que simplemente cortarse el cabello.
+
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <div class="footer-title">
+          Explorar
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#inicio">
+            Inicio
+          </a>
+
+          <a href="#servicios">
+            Servicios
+          </a>
+
+          <a href="#ritual">
+            Ritual
+          </a>
+
+          <a href="#equipo">
+            Equipo
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <div>
+
+        <div class="footer-title">
+          Social
+        </div>
+
+        <div class="footer-links">
+
+          <a href="#">
+            Instagram ↗
+          </a>
+
+          <a href="#">
+            TikTok ↗
+          </a>
+
+          <a href="#">
+            WhatsApp ↗
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 BLACKTHORN BARBER CLUB
+      </span>
+
+      <span>
+        CUT · CULTURE · CHARACTER
+      </span>
+
+    </div>
+
+
+  </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
+
+<a
+  href="https://wa.me/56912345678?text=Hola%20Blackthorn%2C%20quiero%20reservar%20una%20hora"
+  target="_blank"
+  rel="noopener"
+  class="whatsapp"
+  aria-label="WhatsApp"
+>
+
+  <svg viewBox="0 0 32 32">
+
+    <path d="M19.11 17.43c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.88 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.4-1.66-1.56-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.51-.86-2.07-.23-.54-.46-.47-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.37 1 2.7 1.14 2.88.14.19 1.97 3.01 4.77 4.22.67.29 1.19.46 1.59.59.67.21 1.28.18 1.76.11.54-.08 1.65-.68 1.88-1.33.23-.65.23-1.21.16-1.33-.07-.11-.26-.18-.54-.32z"/>
+
+    <path d="M16.03 3C8.85 3 3.03 8.8 3.03 15.96c0 2.28.6 4.51 1.73 6.47L3 29l6.74-1.76a13 13 0 0 0 6.28 1.6h.01c7.18 0 13-5.81 13-12.96C29.03 8.8 23.21 3 16.03 3zm0 23.65h-.01a10.8 10.8 0 0 1-5.5-1.51l-.39-.23-4 1.05 1.07-3.89-.25-.4a10.71 10.71 0 0 1-1.66-5.71c0-5.94 4.83-10.77 10.76-10.77 2.88 0 5.58 1.12 7.61 3.15a10.69 10.69 0 0 1 3.15 7.62c-.02 5.94-4.84 10.77-10.78 10.77z"/>
+
+  </svg>
+
+</a>
+
+
+
+<script>
+
+  /* =========================================================
+     HEADER
+  ========================================================= */
+
+  const header =
+    document.getElementById("header");
+
+
+  window.addEventListener(
+    "scroll",
+    () => {
+
       if(window.scrollY > 40){
-        header.classList.add("scrolled");
+
+        header.classList.add(
+          "scrolled"
+        );
+
       }else{
-        header.classList.remove("scrolled");
+
+        header.classList.remove(
+          "scrolled"
+        );
+
       }
-    });
 
-    const menuBtn = document.getElementById("menuBtn");
-    const nav = document.getElementById("nav");
+    }
+  );
 
-    menuBtn.addEventListener("click", () => {
-      nav.classList.toggle("mobile-open");
-      menuBtn.textContent = nav.classList.contains("mobile-open") ? "✕" : "☰";
-    });
 
-    document.querySelectorAll("nav a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("mobile-open");
-        menuBtn.textContent = "☰";
-      });
-    });
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
+  /* =========================================================
+     MOBILE MENU
+  ========================================================= */
+
+  const menuBtn =
+    document.getElementById("menuBtn");
+
+
+  const nav =
+    document.getElementById("nav");
+
+
+  menuBtn.addEventListener(
+    "click",
+    () => {
+
+      nav.classList.toggle(
+        "mobile-open"
+      );
+
+
+      menuBtn.textContent =
+        nav.classList.contains(
+          "mobile-open"
+        )
+        ? "✕"
+        : "☰";
+
+    }
+  );
+
+
+  document
+    .querySelectorAll("nav a")
+    .forEach(
+      link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            nav.classList.remove(
+              "mobile-open"
+            );
+
+            menuBtn.textContent =
+              "☰";
+
           }
-        });
-      },
-      { threshold:.12 }
+        );
+
+      }
     );
 
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-    const bookingForm = document.getElementById("bookingForm");
 
-    bookingForm.addEventListener("submit", function(event){
+  /* =========================================================
+     SCROLL REVEAL
+  ========================================================= */
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(
+          entry => {
+
+            if(
+              entry.isIntersecting
+            ){
+
+              entry.target
+                .classList
+                .add("visible");
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          }
+        );
+
+      },
+
+      {
+        threshold:.12
+      }
+
+    );
+
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach(
+      el =>
+        observer.observe(el)
+    );
+
+
+
+  /* =========================================================
+     HERO IMAGE MOVEMENT
+  ========================================================= */
+
+  const heroImage =
+    document.getElementById(
+      "heroImage"
+    );
+
+
+  if(
+    window.matchMedia(
+      "(pointer:fine)"
+    ).matches
+  ){
+
+    document.addEventListener(
+      "mousemove",
+      e => {
+
+        const x =
+          (
+            e.clientX /
+            window.innerWidth
+            - .5
+          ) * 10;
+
+
+        const y =
+          (
+            e.clientY /
+            window.innerHeight
+            - .5
+          ) * 8;
+
+
+        heroImage.style.transform =
+          `translate(${x}px, ${y}px)`;
+
+      }
+    );
+
+  }
+
+
+
+  /* =========================================================
+     BOOKING
+  ========================================================= */
+
+  const bookingForm =
+    document.getElementById(
+      "bookingForm"
+    );
+
+
+  bookingForm.addEventListener(
+    "submit",
+    event => {
+
       event.preventDefault();
 
-      const nombre = document.getElementById("nombre").value;
-      const telefono = document.getElementById("telefono").value;
-      const servicio = document.getElementById("servicio").value;
-      const horario = document.getElementById("horario").value;
-      const mensaje = document.getElementById("mensaje").value;
 
-      const texto = `Hola Blackthorn.
-Mi nombre es ${nombre}.
+      const nombre =
+        document.getElementById(
+          "nombre"
+        ).value;
+
+
+      const telefono =
+        document.getElementById(
+          "telefono"
+        ).value;
+
+
+      const servicio =
+        document.getElementById(
+          "servicio"
+        ).value;
+
+
+      const horario =
+        document.getElementById(
+          "horario"
+        ).value;
+
+
+      const mensaje =
+        document.getElementById(
+          "mensaje"
+        ).value;
+
+
+      const texto =
+`Hola Blackthorn.
+
+Soy ${nombre}.
 
 Quiero reservar una hora.
 
@@ -2063,14 +3852,24 @@ ${telefono}
 Comentario:
 ${mensaje}`;
 
-      const whatsapp = "56912345678";
+
+      const whatsapp =
+        "56912345678";
+
 
       window.open(
+
         `https://wa.me/${whatsapp}?text=${encodeURIComponent(texto)}`,
+
         "_blank"
+
       );
-    });
-  </script>
+
+    }
+  );
+
+</script>
+
 
 </body>
 </html>
